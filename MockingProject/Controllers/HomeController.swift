@@ -17,7 +17,7 @@ class HomeController: UIViewController {
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 	
 	var manager: APIManager!
-	var recipes: [Recipe] = []
+	var employees: [Employee] = []
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -27,26 +27,29 @@ class HomeController: UIViewController {
 	
 	func setupTableView(){
 		manager = APIManager()
-		self.tableView.register(UINib(nibName: "RecipeCell", bundle: nil), forCellReuseIdentifier: "RecipeCell")
+		self.tableView.register(UINib(nibName: "EmployeeCell", bundle: nil), forCellReuseIdentifier: "EmployeeCell")
 		self.tableView.dataSource = self
 		self.tableView.delegate = self
 		self.tableView.tableFooterView = UIView()
 		self.tableView.es.addPullToRefresh {
-			self.getRecipes()
+			self.getEmployees()
 		}
 		self.tableView.es.startPullToRefresh()
 	}
 	
-	func getRecipes(){
-		manager.getRecipes { (recipes, error) in
-			if let error = error {
-				self.showAlert(title: "Error", message: error.localizedDescription)
-				return
-			}
-			if let recipes = recipes {
-				self.recipes = recipes
-				self.showTableView()
-			}
+	func getEmployees(){
+        manager.getEmployees { (result: DataResponse<EmployeesResponse,AFError>) in
+            switch result.result {
+            case .success(let response):
+                if(response.status == "success"){
+                    self.employees = response.data
+                    self.showTableView()
+                    return
+                }
+                self.showAlert(title: "Error", message: BaseNetworkManager().getErrorMessage(response: result))
+            case .failure:
+                self.showAlert(title: "Error", message: BaseNetworkManager().getErrorMessage(response: result))
+            }
 		}
 	}
 
@@ -73,7 +76,7 @@ class HomeController: UIViewController {
 		}
 	}
 	
-	func moveToDetails(item: Recipe){
+	func moveToDetails(item: Employee){
 		DispatchQueue.main.async {
 			let detailController = DetailController().initializeFromStoryboard()
 			detailController.item = item
@@ -85,7 +88,7 @@ class HomeController: UIViewController {
 
 extension HomeController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let item = self.recipes[indexPath.row]
+		let item = self.employees[indexPath.row]
 		self.moveToDetails(item: item)
 	}
 }
@@ -93,16 +96,16 @@ extension HomeController: UITableViewDelegate {
 
 extension HomeController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return recipes.count
+		return employees.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as! RecipeCell
-		cell.item = self.recipes[indexPath.row]
+		let cell = tableView.dequeueReusableCell(withIdentifier: "EmployeeCell", for: indexPath) as! EmployeeCell
+		cell.item = self.employees[indexPath.row]
 		return cell
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 230.0
+        return 96.0
 	}
 }

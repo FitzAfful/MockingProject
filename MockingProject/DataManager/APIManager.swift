@@ -12,14 +12,14 @@ import Alamofire
 
 public class APIManager {
 
-    static func getEmployees(completion:@escaping (DataResponse<EmployeesResponse, AFError>)->Void) {
+    func getEmployees(completion:@escaping (DataResponse<EmployeesResponse, AFError>)->Void) {
         AF.request(APIRouter.getEmployees).responseDecodable { (response) in
             completion(response)
         }
     }
 
 
-    static func getSingleEmployee(id: String, completion:@escaping (DataResponse<EmployeeResponse, AFError>)->Void) {
+    func getSingleEmployee(id: String, completion:@escaping (DataResponse<EmployeeResponse, AFError>)->Void) {
         AF.request(APIRouter.getSingleEmployee(id: id)).responseDecodable { (response) in
             completion(response)
         }

@@ -32,10 +32,45 @@ public class BaseNetworkManager {
 	}
 }
 
+
+class DictionaryEncoder {
+    private let jsonEncoder = JSONEncoder()
+
+    /// Encodes given Encodable value into an array or dictionary
+    func encode<T>(_ value: T) throws -> Any where T: Encodable {
+        let jsonData = try jsonEncoder.encode(value)
+        return try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)
+    }
+}
+
+class DictionaryDecoder {
+    private let jsonDecoder = JSONDecoder()
+
+    /// Decodes given Decodable type from given array or dictionary
+    func decode<T>(_ type: T.Type, from json: Any) throws -> T where T: Decodable {
+        let jsonData = try JSONSerialization.data(withJSONObject: json, options: [])
+        return try jsonDecoder.decode(type, from: jsonData)
+    }
+}
+
+
+extension Encodable {
+    var dictionary : [String: Any] {
+        var param: [String:Any] = [:]
+        do{
+            let param1 = try DictionaryEncoder().encode(self)
+            print("Param1: \(param1)")
+            param = param1 as! [String : Any]
+        }catch{
+            print("Couldnt parse parameter")
+        }
+        return param
+    }
+}
+
+
 struct NetworkingConstants{
-	static let spaceID = "kk2bw5ojx476"
-	static let access_token = "7ac531648a1b5e1dab6c18b0979f822a5aad0fe5f1109829b8a197eb2be4b84c"
-	static let baseUrl = "https://cdn.contentful.com/spaces/\(NetworkingConstants.spaceID)/environments/master/entries"
+	static let baseUrl = "https://dummy.restapiexample.com/api/v1/"
 	static let networkErrorMessage = "Please check your internet connection and try again."
 }
 

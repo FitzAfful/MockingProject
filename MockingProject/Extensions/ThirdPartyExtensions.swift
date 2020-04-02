@@ -20,11 +20,5 @@ extension UIImageView {
 		Nuke.loadImage(with: mainURL, into: self)
 	}
 	
-	func setImage(asset: IncludeAsset?){
-		guard let myAsset = asset, myAsset.fields.file.url != nil, !(myAsset.fields.file.url!.isEmpty) else {
-			return
-		}
-		let image = "https:" + myAsset.fields.file.url!
-		self.setImage(url: image)
-	}
 }
+

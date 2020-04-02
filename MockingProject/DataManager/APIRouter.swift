@@ -11,27 +11,32 @@ import Alamofire
 
 enum APIRouter : APIConfiguration {
 	
-	case getRecipes
+	case getEmployees
+    case getSingleEmployee(id: String)
 	
 	internal var method: HTTPMethod {
 		switch self {
-		case .getRecipes:
+		case .getEmployees:
 			return .get
+        case .getSingleEmployee:
+            return .get
 		}
 	}
 	
 	internal var path: String {
 		switch self {
-		default:
-			return ""
+        case .getEmployees:
+            return NetworkingConstants.baseUrl + "employees"
+        case .getSingleEmployee(let id):
+            return NetworkingConstants.baseUrl + "employee/\(id)"
 		}
 	}
 	
 	
 	internal var parameters: [String : Any] {
 		switch self {
-		case .getRecipes:
-			return ["access_token": NetworkingConstants.access_token, "content_type":Recipe.contentTypeId]
+		default:
+            return [:]
 		}
 	}
 	
@@ -69,7 +74,7 @@ enum APIRouter : APIConfiguration {
 		
 		
 		urlRequest.httpMethod = method.rawValue
-		urlRequest.allHTTPHeaderFields = headers.dictionary
+        urlRequest.allHTTPHeaderFields = (headers.dictionary as! [String : String])
 		
 		if(!(body.isEmpty)){
 			urlRequest = try URLEncoding().encode(urlRequest, with: body)

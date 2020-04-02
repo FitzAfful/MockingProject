@@ -1,9 +1,9 @@
 //
-//  AuthEndpoints.swift
-//  RideAlong
+//  APIRouter.swift
+//  MockingProject
 //
-//  Created by Paa Quesi Afful on 20/01/2019.
-//  Copyright © 2019 RideAlong. All rights reserved.
+//  Created by Paa Quesi Afful on 01/04/2020.
+//  Copyright © 2020 MockingProject. All rights reserved.
 //
 
 import Foundation
@@ -74,7 +74,7 @@ enum APIRouter : APIConfiguration {
 		
 		
 		urlRequest.httpMethod = method.rawValue
-        urlRequest.allHTTPHeaderFields = (headers.dictionary as! [String : String])
+        urlRequest.allHTTPHeaderFields = headers.dictionary
 		
 		if(!(body.isEmpty)){
 			urlRequest = try URLEncoding().encode(urlRequest, with: body)

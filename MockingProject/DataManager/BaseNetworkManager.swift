@@ -1,19 +1,17 @@
 //
-//  AuthNetworkManager.swift
-//  RideAlong
+//  APIRouter.swift
+//  MockingProject
 //
-//  Created by Paa Quesi Afful on 20/01/2019.
-//  Copyright © 2019 RideAlong. All rights reserved.
+//  Created by Paa Quesi Afful on 01/04/2020.
+//  Copyright © 2020 MockingProject. All rights reserved.
 //
 
-import Foundation
-import Alamofire
 import Foundation
 import Alamofire
 
 public class BaseNetworkManager {
 	
-	public func getErrorMessage<T>(response: DataResponse<T>)->String where T: Codable {
+	public func getErrorMessage<T>(response: DataResponse<T, AFError>)->String where T: Codable {
 		var message = NetworkingConstants.networkErrorMessage
 		if let data = response.data {
 			if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {

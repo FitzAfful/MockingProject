@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.9.1)
+  - Alamofire (5.0.5)
   - ESPullToRefresh (2.9.2)
   - FTIndicator (1.2.9):
     - FTIndicator/FTNotificationIndicator (= 1.2.9)
@@ -9,7 +9,7 @@ PODS:
   - FTIndicator/FTProgressIndicator (1.2.9)
   - FTIndicator/FTToastIndicator (1.2.9)
   - IQKeyboardManagerSwift (6.5.5)
-  - Nuke (8.4.0)
+  - Nuke (8.4.1)
   - TagListView (1.4.0)
 
 DEPENDENCIES:
@@ -30,11 +30,11 @@ SPEC REPOS:
     - TagListView
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   ESPullToRefresh: efed00d52597065e9a84e1e52fa444fdb1a1dee0
   FTIndicator: f7f071fd159e5befa1d040a9ef2e3ab53fa9322c
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
-  Nuke: fa6f784c4f7e1c0f9313668510186c68b7af2509
+  Nuke: d780e3507a86b86c589ab3cc5cd302d5456f06fb
   TagListView: 987b0bdbb16cd9d9e7c0e2ec32aff37ecba8b173
 
 PODFILE CHECKSUM: 1a2e1f89906d33743bad8aaf65293cf190d1f4c6

@@ -8,9 +8,16 @@
 
 import Foundation
 
-public class Recipe : Codable {
-	public var id: String = ""
-	var title: String = ""
-	var description: String = ""
+public class Employee : Codable {
+	public var id: String
+	var employeeName: String
+	var employeeSalary: String
+    var profileImage: String
+
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case employeeName = "employee_name"
+        case employeeSalary = "employee_salary"
+        case profileImage = "profile_image"
+    }
 }
-{"id":"24","employee_name":"Doris Wilder","employee_salary":"85600","employee_age":"23","profile_image":""}

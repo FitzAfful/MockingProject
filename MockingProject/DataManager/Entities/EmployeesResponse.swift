@@ -7,11 +7,13 @@
 import Foundation
 import Alamofire
 
-struct MainResponse : Codable {
+struct EmployeesResponse : Codable {
 
-        var items : [Item]? = []
-        let limit : Int?
-        let skip : Int?
-        let total : Int
+    var data : [Employee]
+    let status : String
 
+    enum CodingKeys: String, CodingKey {
+        case data = "data"
+        case status = "status"
+    }
 }

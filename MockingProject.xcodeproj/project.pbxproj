@@ -13,7 +13,7 @@
 		84D22D1C2435EE3000358B5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D22D1A2435EE3000358B5F /* Main.storyboard */; };
 		84D22D1E2435EE3300358B5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D22D1D2435EE3300358B5F /* Assets.xcassets */; };
 		84D22D212435EE3300358B5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D22D1F2435EE3300358B5F /* LaunchScreen.storyboard */; };
-		84D22D2C2435EE3300358B5F /* MockingProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D2B2435EE3300358B5F /* MockingProjectTests.swift */; };
+		84D22D2C2435EE3300358B5F /* APIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D2B2435EE3300358B5F /* APIManagerTests.swift */; };
 		84D22D522435F2BB00358B5F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D372435F2BB00358B5F /* APIManager.swift */; };
 		84D22D532435F2BB00358B5F /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D382435F2BB00358B5F /* APIRouter.swift */; };
 		84D22D542435F2BB00358B5F /* BaseNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D392435F2BB00358B5F /* BaseNetworkManager.swift */; };
@@ -49,7 +49,7 @@
 		84D22D202435EE3300358B5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84D22D222435EE3300358B5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84D22D272435EE3300358B5F /* MockingProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockingProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		84D22D2B2435EE3300358B5F /* MockingProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockingProjectTests.swift; sourceTree = "<group>"; };
+		84D22D2B2435EE3300358B5F /* APIManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerTests.swift; sourceTree = "<group>"; };
 		84D22D2D2435EE3300358B5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84D22D372435F2BB00358B5F /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		84D22D382435F2BB00358B5F /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		84D22D2A2435EE3300358B5F /* MockingProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				84D22D2B2435EE3300358B5F /* MockingProjectTests.swift */,
+				84D22D2B2435EE3300358B5F /* APIManagerTests.swift */,
 				84D22D2D2435EE3300358B5F /* Info.plist */,
 			);
 			path = MockingProjectTests;
@@ -362,7 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84D22D2C2435EE3300358B5F /* MockingProjectTests.swift in Sources */,
+				84D22D2C2435EE3300358B5F /* APIManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

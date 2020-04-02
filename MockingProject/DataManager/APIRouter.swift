@@ -61,7 +61,7 @@ enum APIRouter : APIConfiguration {
 	
 	
 	func asURLRequest() throws -> URLRequest {
-		var urlComponents = URLComponents(string: NetworkingConstants.baseUrl)!
+		var urlComponents = URLComponents(string: path)!
 		var queryItems:[URLQueryItem] = []
 		for item in parameters {
 			queryItems.append(URLQueryItem(name: item.key, value: "\(item.value)"))
@@ -71,7 +71,8 @@ enum APIRouter : APIConfiguration {
 		}
 		let url = urlComponents.url!
 		var urlRequest = URLRequest(url: url)
-		
+
+        print("URL: \(url)")
 		
 		urlRequest.httpMethod = method.rawValue
         urlRequest.allHTTPHeaderFields = headers.dictionary

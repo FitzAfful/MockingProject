@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 
-public class APIManager: BaseNetworkManager {
+public class APIManager {
 
     static func getEmployees(completion:@escaping (DataResponse<EmployeesResponse, AFError>)->Void) {
         AF.request(APIRouter.getEmployees).responseDecodable { (response) in

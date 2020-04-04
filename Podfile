@@ -12,6 +12,7 @@ target 'MockingProject' do
     pod 'FTIndicator'
     pod 'TagListView'
     pod 'Mocker'
+    pod 'Resolver'
 
     target 'MockingProjectTests' do
         inherit! :search_paths

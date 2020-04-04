@@ -11,6 +11,7 @@ PODS:
   - IQKeyboardManagerSwift (6.5.5)
   - Mocker (2.1.0)
   - Nuke (8.4.1)
+  - Resolver (1.0.7)
   - TagListView (1.4.0)
 
 DEPENDENCIES:
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - Mocker
   - Nuke
+  - Resolver
   - TagListView
 
 SPEC REPOS:
@@ -30,6 +32,7 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - Mocker
     - Nuke
+    - Resolver
     - TagListView
 
 SPEC CHECKSUMS:
@@ -39,8 +42,9 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   Mocker: 55f3d932b93e1568f3cf15bd697348c06fc676ee
   Nuke: d780e3507a86b86c589ab3cc5cd302d5456f06fb
+  Resolver: da30396fcabb46790959209430a4a0a9e6e39849
   TagListView: 987b0bdbb16cd9d9e7c0e2ec32aff37ecba8b173
 
-PODFILE CHECKSUM: c2786eebfe4f36576405fbba6e5b5c570d1a3395
+PODFILE CHECKSUM: 91faee548f470bc3b6fd4a8a9b3094281c14fd98
 
 COCOAPODS: 1.8.4

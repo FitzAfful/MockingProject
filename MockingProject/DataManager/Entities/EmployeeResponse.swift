@@ -9,7 +9,9 @@
 import Foundation
 import Alamofire
 
-struct EmployeeResponse : Codable {
+struct EmployeeResponse : Codable, Equatable {
+
+
     var data : Employee
     let status : String
 
@@ -17,4 +19,9 @@ struct EmployeeResponse : Codable {
         case data = "data"
         case status = "status"
     }
+
+    static func == (lhs: EmployeeResponse, rhs: EmployeeResponse) -> Bool {
+        return (lhs.data.id == rhs.data.id)
+    }
 }
+

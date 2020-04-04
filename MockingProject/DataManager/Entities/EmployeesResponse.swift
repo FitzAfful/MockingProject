@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-struct EmployeesResponse : Codable {
+struct EmployeesResponse : Codable, Equatable {
 
     var data : [Employee]
     let status : String
@@ -17,5 +17,9 @@ struct EmployeesResponse : Codable {
     enum CodingKeys: String, CodingKey {
         case data = "data"
         case status = "status"
+    }
+
+    static func == (lhs: EmployeesResponse, rhs: EmployeesResponse) -> Bool {
+        return (lhs.data == rhs.data)
     }
 }

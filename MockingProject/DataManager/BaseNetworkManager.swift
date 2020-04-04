@@ -57,7 +57,6 @@ extension Encodable {
         var param: [String:Any] = [:]
         do{
             let param1 = try DictionaryEncoder().encode(self)
-            print("Param1: \(param1)")
             param = param1 as! [String : Any]
         }catch{
             print("Couldnt parse parameter")

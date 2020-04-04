@@ -8,11 +8,23 @@
 
 import XCTest
 @testable import MockingProject
+@testable import Alamofire
 
 class MockingProjectTests: XCTestCase {
 
+    private var manager: APIManager!
+
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let sessionManager: Session = {
+            let configuration: URLSessionConfiguration = {
+                let configuration = URLSessionConfiguration.default
+                configuration.protocolClasses = [MockURLProtocol.self]
+                return configuration
+            }()
+
+            return Session(configuration: configuration)
+        }()
+        manager = APIManager(manager: sessionManager)
     }
 
     override func tearDown() {

@@ -1,0 +1,10 @@
+{
+    "status": "success",
+    "data": {
+        "id": "24",
+        "employee_name": "Doris Wilder",
+        "employee_salary": "85600",
+        "employee_age": "23",
+        "profile_image": ""
+    }
+}

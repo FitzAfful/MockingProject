@@ -21,7 +21,7 @@ public class Employee : Codable, Equatable {
         case profileImage = "profile_image"
     }
 
-    static func == (lhs: Employee, rhs: Employee) -> Bool {
+    public static func == (lhs: Employee, rhs: Employee) -> Bool {
         return (lhs.id == rhs.id)
     }
 }

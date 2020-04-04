@@ -20,7 +20,7 @@ struct EmployeeResponse : Codable, Equatable {
         case status = "status"
     }
 
-    static func == (lhs: EmployeeResponse, rhs: EmployeeResponse) -> Bool {
+    static public func == (lhs: EmployeeResponse, rhs: EmployeeResponse) -> Bool {
         return (lhs.data.id == rhs.data.id)
     }
 }

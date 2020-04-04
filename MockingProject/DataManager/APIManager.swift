@@ -13,6 +13,7 @@ import Alamofire
 public class APIManager {
 
     private let manager: Session
+
     init(manager: Session = Session.default) {
         self.manager = manager
     }

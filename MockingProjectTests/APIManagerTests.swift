@@ -9,8 +9,9 @@
 import XCTest
 @testable import MockingProject
 @testable import Alamofire
+@testable import Mocker
 
-class MockingProjectTests: XCTestCase {
+class APIManagerTests: XCTestCase {
 
     private var manager: APIManager!
 
@@ -18,7 +19,7 @@ class MockingProjectTests: XCTestCase {
         let sessionManager: Session = {
             let configuration: URLSessionConfiguration = {
                 let configuration = URLSessionConfiguration.default
-                configuration.protocolClasses = [MockURLProtocol.self]
+                configuration.protocolClasses = [MockingURLProtocol.self] + (configuration.protocolClasses ?? [])
                 return configuration
             }()
 
@@ -27,19 +28,60 @@ class MockingProjectTests: XCTestCase {
         manager = APIManager(manager: sessionManager)
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func test_getEmployees() {
+
+        let apiEndpoint = URL(string: APIRouter.getEmployees.path)!
+        let requestExpectation = expectation(description: "Request should finish with Employees")
+        let responseFile = "Resources/employees.json"
+        guard let mockedData = dataFromTestBundleFile(fileName: responseFile, withExtension: "json") else {
+            return
+        }
+        guard let mockResponse = try? JSONDecoder().decode(EmployeesResponse.self, from: mockedData) else {
+            XCTFail("Error from JSON DeSerialization.jsonObject")
+        }
+
+        let mock = Mock(url: apiEndpoint, dataType: .json, statusCode: 200, data: [.get: mockedData])
+        mock.register()
+
+        manager.getEmployees { (result) in
+            XCTAssertEqual(result.result.success!, mockResponse)
+            XCTAssertNil(result.error)
+            requestExpectation.fulfill()
+        }
+
+        wait(for: [requestExpectation], timeout: 10.0)
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+    func verifyAndConvertToDictionary(data: Data?) -> [String: Any]? {
+
+        XCTAssertNotNil(data)
+        guard let data = data else { return nil }
+
+        do {
+            let dataObject = try JSONSerialization.jsonObject(with: data, options: [])
+            guard let dataDict = dataObject as? [String: Any] else {
+                XCTFail("data object is not of type [String: Any]. dataObject=\(dataObject )")
+                return nil
+            }
+
+            return dataDict
+        } catch {
+            XCTFail("Error from JSONSerialization.jsonObject; error=\(error)")
+            return nil
+        }
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func dataFromTestBundleFile(fileName: String, withExtension fileExtension: String) -> Data? {
+
+        let testBundle = Bundle(for: APIManagerTests.self)
+        let resourceUrl = testBundle.url(forResource: fileName, withExtension: fileExtension)!
+        do {
+            let data = try Data(contentsOf: resourceUrl)
+            return data
+        } catch {
+            XCTFail("Error reading data from resource file \(fileName).\(fileExtension)")
+            return nil
         }
     }
 

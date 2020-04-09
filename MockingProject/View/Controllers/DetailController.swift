@@ -9,7 +9,7 @@
 import UIKit
 import TagListView
 
-class DetailController: UIViewController {
+class DetailController: UIViewController, MyEnvironmentHelper {
 
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var titleLabel: UILabel!
@@ -25,7 +25,7 @@ class DetailController: UIViewController {
 	func setEmployee(){
 		guard let employee = item else { return }
         imageView.setImage(url: employee.profileImage)
-		titleLabel.text = employee.employeeName
+		titleLabel.text = employee.employeeName + ", (Environment - \(getEnvValue()!)"
 		
         let description = "Salary: " + employee.employeeSalary
 		self.descriptionTextView.text = description

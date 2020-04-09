@@ -10,7 +10,6 @@ target 'MockingProject' do
     pod 'Alamofire'
     pod 'ESPullToRefresh'
     pod 'FTIndicator'
-    pod 'TagListView'
     pod 'Mocker'
     pod 'Resolver'
 

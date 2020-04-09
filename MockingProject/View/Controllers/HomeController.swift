@@ -15,6 +15,11 @@ class HomeController: UIViewController {
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var emptyView: UIView!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
+    lazy var viewModel : HomeViewModel = {
+        let viewModel = HomeViewModel()
+        return viewModel
+    }()
 	
 	var manager: APIManager!
 	var employees: [Employee] = []

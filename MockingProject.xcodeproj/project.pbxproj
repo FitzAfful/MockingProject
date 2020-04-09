@@ -79,6 +79,7 @@
 		84D855D7243EC18B0013E2A8 /* EmployeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D22D4E2435F2BB00358B5F /* EmployeeCell.xib */; };
 		84D855D8243EC18B0013E2A8 /* employee24.json in Resources */ = {isa = PBXBuildFile; fileRef = 84457C1F24381F0F0071AD9B /* employee24.json */; };
 		84D855E1243EC4850013E2A8 /* EnvironmentHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D855E0243EC4850013E2A8 /* EnvironmentHelper.swift */; };
+		84D855E3243EC8490013E2A8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D855E2243EC8490013E2A8 /* Default-568h@2x.png */; };
 		B3D4925ED4F7AA4DFC87AC70 /* Pods_MockingProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822D0DD9187C8EF145275F2A /* Pods_MockingProjectTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +131,7 @@
 		84D855DD243EC18B0013E2A8 /* Production.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Production.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D855DE243EC18B0013E2A8 /* Production-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Production-Info.plist"; path = "/Users/paaquesiafful/iOS Projects/MockingProject/Production-Info.plist"; sourceTree = "<absolute>"; };
 		84D855E0243EC4850013E2A8 /* EnvironmentHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentHelper.swift; sourceTree = "<group>"; };
+		84D855E2243EC8490013E2A8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		BC5B2E3B90BB2A19E9730A6B /* Pods-MockingProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MockingProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-MockingProjectTests/Pods-MockingProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BCBF3FE0A0DC3D7A0A868972 /* Pods_MockingProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MockingProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -211,6 +213,7 @@
 		84D22D082435EE3000358B5F = {
 			isa = PBXGroup;
 			children = (
+				84D855E2243EC8490013E2A8 /* Default-568h@2x.png */,
 				84D22D132435EE3000358B5F /* MockingProject */,
 				84D22D2A2435EE3300358B5F /* MockingProjectTests */,
 				84D22D122435EE3000358B5F /* Products */,
@@ -491,6 +494,7 @@
 				84D855D5243EC18B0013E2A8 /* Main.storyboard in Resources */,
 				84D855D6243EC18B0013E2A8 /* employees.json in Resources */,
 				84D855D7243EC18B0013E2A8 /* EmployeeCell.xib in Resources */,
+				84D855E3243EC8490013E2A8 /* Default-568h@2x.png in Resources */,
 				84D855D8243EC18B0013E2A8 /* employee24.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -907,7 +911,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97XB8J435J;
-				INFOPLIST_FILE = MockingProjectTests/Info.plist;
+				INFOPLIST_FILE = MockingProjectTests/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -918,7 +922,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MockingProject.app/MockingProject";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Development.app/Development";
 			};
 			name = Debug;
 		};
@@ -930,7 +934,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97XB8J435J;
-				INFOPLIST_FILE = MockingProjectTests/Info.plist;
+				INFOPLIST_FILE = MockingProjectTests/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -941,7 +945,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MockingProject.app/MockingProject";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Development.app/Development";
 			};
 			name = Release;
 		};

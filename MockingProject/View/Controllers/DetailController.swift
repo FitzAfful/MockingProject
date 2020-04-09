@@ -25,7 +25,8 @@ class DetailController: UIViewController, MyEnvironmentHelper {
 	func setEmployee(){
 		guard let employee = item else { return }
         imageView.setImage(url: employee.profileImage)
-		titleLabel.text = employee.employeeName + ", (Environment - \(getEnvValue()!)"
+        self.title = "Environment - \(getEnvValue()!)"
+		titleLabel.text = employee.employeeName
 		
         let description = "Salary: " + employee.employeeSalary
 		self.descriptionTextView.text = description

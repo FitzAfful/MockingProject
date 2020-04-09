@@ -7,14 +7,14 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol HomeViewModelProtocol {
-    func fetchEmployees()
+    mutating func fetchEmployees()
     func setError()
 }
 
 struct HomeViewModel : HomeViewModelProtocol {
-
     var apiManager: APIManager?
     var employees: [Employee] = []
 
@@ -26,8 +26,8 @@ struct HomeViewModel : HomeViewModelProtocol {
         self.apiManager = manager
     }
 
-    func fetchEmployees() {
-        self.apiManager!.getEmployees { (result: DataResponse<EmployeesResponse,AFError>) in
+    mutating func fetchEmployees() {
+        /*self.apiManager!.getEmployees { (result: DataResponse<EmployeesResponse,AFError>) in
             switch result.result {
             case .success(let response):
                 if(response.status == "success"){
@@ -39,9 +39,11 @@ struct HomeViewModel : HomeViewModelProtocol {
             case .failure:
                 self.showAlert(title: "Error", message: BaseNetworkManager().getErrorMessage(response: result))
             }
-        }
+        }*/
     }
 
-    
+    func setError() {
+
+    }
 
 }

@@ -9,8 +9,8 @@
 import Foundation
 
 class EnvironmentHelper {
-    static var shared: Helper = {
-        return Helper()
+    static var shared: EnvironmentHelper = {
+        return EnvironmentHelper()
 
     }()
 

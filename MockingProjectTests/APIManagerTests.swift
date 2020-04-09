@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import MockingProject
+@testable import Development
 @testable import Alamofire
 @testable import Mocker
 

@@ -1,6 +1,6 @@
 # MockingProject
 
-[![Build Status](https://build.appcenter.ms/v0.1/apps/d53174af-00c0-42be-bdb8-d6ed8916fc9d/branches/development/badge)]
+![Build Status](https://build.appcenter.ms/v0.1/apps/d53174af-00c0-42be-bdb8-d6ed8916fc9d/branches/development/badge)
 
 A little project to refresh my memory on old stuff I forgot about and new stuff I'm learning. I comment parts I think will be difficult to understand.
 

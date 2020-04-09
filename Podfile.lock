@@ -1,5 +1,13 @@
 PODS:
   - Alamofire (5.0.5)
+  - AppCenter (3.1.0):
+    - AppCenter/Analytics (= 3.1.0)
+    - AppCenter/Crashes (= 3.1.0)
+  - AppCenter/Analytics (3.1.0):
+    - AppCenter/Core
+  - AppCenter/Core (3.1.0)
+  - AppCenter/Crashes (3.1.0):
+    - AppCenter/Core
   - ESPullToRefresh (2.9.2)
   - FTIndicator (1.2.9):
     - FTIndicator/FTNotificationIndicator (= 1.2.9)
@@ -12,39 +20,38 @@ PODS:
   - Mocker (2.1.0)
   - Nuke (8.4.1)
   - Resolver (1.0.7)
-  - TagListView (1.4.0)
 
 DEPENDENCIES:
   - Alamofire
+  - AppCenter
   - ESPullToRefresh
   - FTIndicator
   - IQKeyboardManagerSwift
   - Mocker
   - Nuke
   - Resolver
-  - TagListView
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - AppCenter
     - ESPullToRefresh
     - FTIndicator
     - IQKeyboardManagerSwift
     - Mocker
     - Nuke
     - Resolver
-    - TagListView
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  AppCenter: a1c30c47b7882a04a615ffa5ab26c007326436d8
   ESPullToRefresh: efed00d52597065e9a84e1e52fa444fdb1a1dee0
   FTIndicator: f7f071fd159e5befa1d040a9ef2e3ab53fa9322c
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   Mocker: 55f3d932b93e1568f3cf15bd697348c06fc676ee
   Nuke: d780e3507a86b86c589ab3cc5cd302d5456f06fb
   Resolver: da30396fcabb46790959209430a4a0a9e6e39849
-  TagListView: 987b0bdbb16cd9d9e7c0e2ec32aff37ecba8b173
 
-PODFILE CHECKSUM: 91faee548f470bc3b6fd4a8a9b3094281c14fd98
+PODFILE CHECKSUM: bf8ecb3cb2440ab4910c69a88e8bc24970bfde77
 
 COCOAPODS: 1.8.4

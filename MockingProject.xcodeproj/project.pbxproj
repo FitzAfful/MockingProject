@@ -16,7 +16,6 @@
 		84457C2324381F0F0071AD9B /* employee24.json in Resources */ = {isa = PBXBuildFile; fileRef = 84457C1F24381F0F0071AD9B /* employee24.json */; };
 		84457C272438280E0071AD9B /* HomeControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84457C262438280E0071AD9B /* HomeControllerTests.swift */; };
 		84457C2B243893D40071AD9B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84457C2A243893D40071AD9B /* HomeViewModel.swift */; };
-		84457C2D243896810071AD9B /* GenericDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84457C2C243896810071AD9B /* GenericDataSource.swift */; };
 		84D22D152435EE3000358B5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D142435EE3000358B5F /* AppDelegate.swift */; };
 		84D22D172435EE3000358B5F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D162435EE3000358B5F /* SceneDelegate.swift */; };
 		84D22D1C2435EE3000358B5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D22D1A2435EE3000358B5F /* Main.storyboard */; };
@@ -40,7 +39,6 @@
 		84D855A2243EC1810013E2A8 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D4A2435F2BB00358B5F /* DetailController.swift */; };
 		84D855A3243EC1810013E2A8 /* ThirdPartyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D512435F2BB00358B5F /* ThirdPartyExtensions.swift */; };
 		84D855A4243EC1810013E2A8 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D502435F2BB00358B5F /* UIViewController+Extensions.swift */; };
-		84D855A5243EC1810013E2A8 /* GenericDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84457C2C243896810071AD9B /* GenericDataSource.swift */; };
 		84D855A6243EC1810013E2A8 /* EmployeeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D6B243631C300358B5F /* EmployeeResponse.swift */; };
 		84D855A7243EC1810013E2A8 /* EmployeesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D69243631C300358B5F /* EmployeesResponse.swift */; };
 		84D855A8243EC1810013E2A8 /* BaseNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D392435F2BB00358B5F /* BaseNetworkManager.swift */; };
@@ -61,7 +59,6 @@
 		84D855C3243EC18B0013E2A8 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D4A2435F2BB00358B5F /* DetailController.swift */; };
 		84D855C4243EC18B0013E2A8 /* ThirdPartyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D512435F2BB00358B5F /* ThirdPartyExtensions.swift */; };
 		84D855C5243EC18B0013E2A8 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D502435F2BB00358B5F /* UIViewController+Extensions.swift */; };
-		84D855C6243EC18B0013E2A8 /* GenericDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84457C2C243896810071AD9B /* GenericDataSource.swift */; };
 		84D855C7243EC18B0013E2A8 /* EmployeeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D6B243631C300358B5F /* EmployeeResponse.swift */; };
 		84D855C8243EC18B0013E2A8 /* EmployeesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D69243631C300358B5F /* EmployeesResponse.swift */; };
 		84D855C9243EC18B0013E2A8 /* BaseNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D392435F2BB00358B5F /* BaseNetworkManager.swift */; };
@@ -109,7 +106,6 @@
 		84457C1F24381F0F0071AD9B /* employee24.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = employee24.json; sourceTree = "<group>"; };
 		84457C262438280E0071AD9B /* HomeControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControllerTests.swift; sourceTree = "<group>"; };
 		84457C2A243893D40071AD9B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		84457C2C243896810071AD9B /* GenericDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDataSource.swift; sourceTree = "<group>"; };
 		84D22D112435EE3000358B5F /* Development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Development.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D22D142435EE3000358B5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84D22D162435EE3000358B5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -285,7 +281,6 @@
 				84D22D372435F2BB00358B5F /* APIManager.swift */,
 				84D22D382435F2BB00358B5F /* APIRouter.swift */,
 				84D22D392435F2BB00358B5F /* BaseNetworkManager.swift */,
-				84457C2C243896810071AD9B /* GenericDataSource.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -358,6 +353,7 @@
 				84D22D0E2435EE3000358B5F /* Frameworks */,
 				84D22D0F2435EE3000358B5F /* Resources */,
 				5C80FC80327BA81F29F8C121 /* [CP] Embed Pods Frameworks */,
+				842F9854243F7C0F0033F791 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -413,6 +409,7 @@
 				84D855C0243EC18B0013E2A8 /* Sources */,
 				84D855D0243EC18B0013E2A8 /* Frameworks */,
 				84D855D2243EC18B0013E2A8 /* Resources */,
+				842F9853243F7BFD0033F791 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -577,6 +574,41 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		842F9853243F7BFD0033F791 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		842F9854243F7C0F0033F791 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		84D8559E243EC1810013E2A8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -633,7 +665,6 @@
 				84D22D632435F2BB00358B5F /* DetailController.swift in Sources */,
 				84D22D682435F2BB00358B5F /* ThirdPartyExtensions.swift in Sources */,
 				84D22D672435F2BB00358B5F /* UIViewController+Extensions.swift in Sources */,
-				84457C2D243896810071AD9B /* GenericDataSource.swift in Sources */,
 				84D22D6E243631C300358B5F /* EmployeeResponse.swift in Sources */,
 				84D855E1243EC4850013E2A8 /* EnvironmentHelper.swift in Sources */,
 				84D22D6C243631C300358B5F /* EmployeesResponse.swift in Sources */,
@@ -666,7 +697,6 @@
 				84D855A2243EC1810013E2A8 /* DetailController.swift in Sources */,
 				84D855A3243EC1810013E2A8 /* ThirdPartyExtensions.swift in Sources */,
 				84D855A4243EC1810013E2A8 /* UIViewController+Extensions.swift in Sources */,
-				84D855A5243EC1810013E2A8 /* GenericDataSource.swift in Sources */,
 				84D855A6243EC1810013E2A8 /* EmployeeResponse.swift in Sources */,
 				84D855A7243EC1810013E2A8 /* EmployeesResponse.swift in Sources */,
 				84D855A8243EC1810013E2A8 /* BaseNetworkManager.swift in Sources */,
@@ -688,7 +718,6 @@
 				84D855C3243EC18B0013E2A8 /* DetailController.swift in Sources */,
 				84D855C4243EC18B0013E2A8 /* ThirdPartyExtensions.swift in Sources */,
 				84D855C5243EC18B0013E2A8 /* UIViewController+Extensions.swift in Sources */,
-				84D855C6243EC18B0013E2A8 /* GenericDataSource.swift in Sources */,
 				84D855C7243EC18B0013E2A8 /* EmployeeResponse.swift in Sources */,
 				84D855C8243EC18B0013E2A8 /* EmployeesResponse.swift in Sources */,
 				84D855C9243EC18B0013E2A8 /* BaseNetworkManager.swift in Sources */,

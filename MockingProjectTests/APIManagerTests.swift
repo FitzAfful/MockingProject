@@ -55,8 +55,8 @@ class APIManagerTests: XCTestCase {
     }
 
     func test_getSingleEmployee() {
-        let id = "24"
-        let apiEndpoint = URL(string: APIRouter.getSingleEmployee(id: id).path)!
+        let employeeId = "24"
+        let apiEndpoint = URL(string: APIRouter.getSingleEmployee(employeeId: employeeId).path)!
         let requestExpectation = expectation(description: "Request should finish with Employees")
         let responseFile = "employee24"
         guard let mockedData = dataFromTestBundleFile(fileName: responseFile, withExtension: "json") else {
@@ -71,7 +71,7 @@ class APIManagerTests: XCTestCase {
         let mock = Mock(url: apiEndpoint, dataType: .json, statusCode: 200, data: [.get: mockedData])
         mock.register()
 
-        manager.getSingleEmployee(id: id) { (result) in
+        manager.getSingleEmployee(employeeId: employeeId) { (result) in
             XCTAssertEqual(result.result.success!, mockResponse)
             XCTAssertNil(result.error)
             requestExpectation.fulfill()

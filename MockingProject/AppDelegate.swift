@@ -14,10 +14,8 @@ import AppCenterCrashes
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        MSAppCenter.start("ede02f1f-31af-4da6-8c8f-395519dda28a", withServices:[
+        MSAppCenter.start("ede02f1f-31af-4da6-8c8f-395519dda28a", withServices: [
           MSAnalytics.self,
           MSCrashes.self
         ])
@@ -37,7 +35,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
 }
-

@@ -1,0 +1,21 @@
+included:
+  - MockingProject
+
+disabled_rules:
+  - identifier_name
+  - line_length
+  - function_body_length
+  - force_cast
+
+excluded:
+  - Pods
+
+line_length:
+    warning: 180
+    error: 400
+    ignores_function_declarations: true
+    ignores_comments: true
+    ignores_urls: true
+
+switch_case_alignment:
+    indented_cases: true

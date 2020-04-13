@@ -10,6 +10,7 @@ A little project to refresh my memory on old stuff I forgot about and new stuff 
 - [Mocker for Mocking Calls/Objects](https://github.com/WeTransfer/Mocker)
 - [Resolver for Dependency Injection](https://github.com/hmlongco/Resolver)
 - [Alamofire for Network Calls](https://github.com/Alamofire/Alamofire)
+- [Swiftlint for Code Analysis](https://github.com/realm/SwiftLint)
 - [Microsoft App Center](https://appcenter.ms)
 
 

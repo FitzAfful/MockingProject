@@ -8,20 +8,20 @@
 
 import Foundation
 
-public class Employee : Codable, Equatable {
-	public var id: String
+public class Employee: Codable, Equatable {
+    var employeeId: String
 	var employeeName: String
 	var employeeSalary: String
     var profileImage: String
 
     enum CodingKeys: String, CodingKey {
-        case id = "id"
+        case employeeId = "id"
         case employeeName = "employee_name"
         case employeeSalary = "employee_salary"
         case profileImage = "profile_image"
     }
 
     public static func == (lhs: Employee, rhs: Employee) -> Bool {
-        return (lhs.id == rhs.id)
+        return (lhs.employeeId == rhs.employeeId)
     }
 }

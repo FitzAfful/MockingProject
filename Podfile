@@ -13,6 +13,7 @@ target 'Development' do
     pod 'Mocker'
     pod 'Resolver'
     pod 'AppCenter'
+    pod 'SwiftLint'
 
     target 'MockingProjectTests' do
         inherit! :search_paths

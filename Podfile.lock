@@ -20,6 +20,7 @@ PODS:
   - Mocker (2.1.0)
   - Nuke (8.4.1)
   - Resolver (1.0.7)
+  - SwiftLint (0.39.2)
 
 DEPENDENCIES:
   - Alamofire
@@ -30,6 +31,7 @@ DEPENDENCIES:
   - Mocker
   - Nuke
   - Resolver
+  - SwiftLint
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -41,6 +43,7 @@ SPEC REPOS:
     - Mocker
     - Nuke
     - Resolver
+    - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
@@ -51,7 +54,8 @@ SPEC CHECKSUMS:
   Mocker: 55f3d932b93e1568f3cf15bd697348c06fc676ee
   Nuke: d780e3507a86b86c589ab3cc5cd302d5456f06fb
   Resolver: da30396fcabb46790959209430a4a0a9e6e39849
+  SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
 
-PODFILE CHECKSUM: bf8ecb3cb2440ab4910c69a88e8bc24970bfde77
+PODFILE CHECKSUM: b08cb7b3f4dd209c7a7fdf153a74f9b0659e0039
 
 COCOAPODS: 1.8.4

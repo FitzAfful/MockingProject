@@ -14,11 +14,11 @@ protocol HomeViewModelProtocol {
     func setError()
 }
 
-struct HomeViewModel : HomeViewModelProtocol {
+struct HomeViewModel: HomeViewModelProtocol {
     var apiManager: APIManager?
     var employees: [Employee] = []
 
-    init(manager : APIManager = APIManager()) {
+    init(manager: APIManager = APIManager()) {
         self.apiManager = manager
     }
 

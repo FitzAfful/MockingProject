@@ -13,27 +13,25 @@ class DetailController: UIViewController, MyEnvironmentHelper {
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var descriptionTextView: UITextView!
-	
+
 	var item: Employee?
-	
     override func viewDidLoad() {
         super.viewDidLoad()
 		setEmployee()
     }
 
-	func setEmployee(){
+	func setEmployee() {
 		guard let employee = item else { return }
         imageView.setImage(url: employee.profileImage)
         self.title = "Environment - \(getEnvValue()!)"
 		titleLabel.text = employee.employeeName
-		
         let description = "Salary: " + employee.employeeSalary
 		self.descriptionTextView.text = description
 
 	}
-	
-	func initializeFromStoryboard()-> DetailController{
-		let controller = AppStoryboard.Main.instance.instantiateViewController(withIdentifier: DetailController.storyboardID) as! DetailController
+
+	func initializeFromStoryboard() -> DetailController {
+		let controller = AppStoryboard.main.instance.instantiateViewController(withIdentifier: DetailController.storyboardID) as! DetailController
 		return controller
 	}
 }

@@ -16,13 +16,10 @@ class ObservableController: UIViewController {
 	@IBOutlet weak var emptyView: UIView!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-    lazy var viewModel: HomeViewModel = {
-        let viewModel = HomeViewModel()
+    lazy var viewModel: ObservableViewModel = {
+        let viewModel = ObservableViewModel()
         return viewModel
     }()
-
-	var manager: APIManager!
-	var employees: [Employee] = []
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -31,11 +28,11 @@ class ObservableController: UIViewController {
 	}
 
 	func setupTableView() {
-		manager = APIManager()
 		self.tableView.register(UINib(nibName: "EmployeeCell", bundle: nil), forCellReuseIdentifier: "EmployeeCell")
 		self.tableView.dataSource = self
 		self.tableView.delegate = self
 		self.tableView.tableFooterView = UIView()
+        self.tableView.bind(to: viewModel.employees)
 		self.tableView.es.addPullToRefresh {
 			self.getEmployees()
 		}
@@ -43,19 +40,7 @@ class ObservableController: UIViewController {
 	}
 
 	func getEmployees() {
-        manager.getEmployees { (result: DataResponse<EmployeesResponse, AFError>) in
-            switch result.result {
-                case .success(let response):
-                    if response.status == "success" {
-                        self.employees = response.data
-                        self.showTableView()
-                        return
-                    }
-                    self.showAlert(title: "Error", message: BaseNetworkManager().getErrorMessage(response: result))
-                case .failure:
-                    self.showAlert(title: "Error", message: BaseNetworkManager().getErrorMessage(response: result))
-            }
-		}
+        viewModel.fetchEmployees()
 	}
 
 	func showLoader() {
@@ -93,19 +78,19 @@ class ObservableController: UIViewController {
 
 extension ObservableController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let item = self.employees[indexPath.row]
+        let item = self.viewModel.employees.value[indexPath.row]
 		self.moveToDetails(item: item)
 	}
 }
 
 extension ObservableController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return employees.count
+        return self.viewModel.employees.value.count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "EmployeeCell", for: indexPath) as! EmployeeCell
-		cell.item = self.employees[indexPath.row]
+        cell.item = self.viewModel.employees.value[indexPath.row]
 		return cell
 	}
 
@@ -114,25 +99,28 @@ extension ObservableController: UITableViewDataSource {
 	}
 }
 
-class Observable<ObservedType> { private var _value: ObservedType?
+class Observable<T> {
 
-    init(_ value: ObservedType) {
-        _value = value
+    init(_ newValue: T) {
+        value = newValue
     }
 
-    var valueChanged: ((ObservedType?) -> Void)?
+    var value: T {
+        didSet {
+            DispatchQueue.main.async {
+                self.valueChanged?(self.value)
+            }
+        }
+    }
+    var valueChanged: ((T) -> Void)?
+}
 
-    public var value: ObservedType? {
-        get {
-            return _value }
-        set {
-            _value = newValue
-            valueChanged?(_value)
+
+extension UITableView {
+    func bind(to observable: Observable<T>) {
+        observable.valueChanged = { [weak self] newValue in
+            self?.reloadData()
         }
     }
 
-    func bindingChanged(to newValue: ObservedType) {
-        _value = newValue
-        print("Value is now \(newValue)")
-    }
 }

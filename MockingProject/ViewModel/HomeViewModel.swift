@@ -11,10 +11,16 @@ import Alamofire
 
 protocol HomeViewModelProtocol {
     mutating func fetchEmployees()
-    func setError()
+    mutating func setError(_ message: String)
+    var employees: [Employee] { get  set }
+    var errorMessage: String? { get set }
+    var error: Bool { get set }
 }
 
 struct HomeViewModel: HomeViewModelProtocol {
+    var errorMessage: String?
+    var error: Bool = false
+
     var apiManager: APIManager?
     var employees: [Employee] = []
 
@@ -32,18 +38,18 @@ struct HomeViewModel: HomeViewModelProtocol {
             case .success(let response):
                 if(response.status == "success"){
                     self.employees = response.data
-                    self.showTableView()
                     return
                 }
-                self.showAlert(title: "Error", message: BaseNetworkManager().getErrorMessage(response: result))
+                self.setError(BaseNetworkManager().getErrorMessage(response: result))
             case .failure:
-                self.showAlert(title: "Error", message: BaseNetworkManager().getErrorMessage(response: result))
+                self.setError(BaseNetworkManager().getErrorMessage(response: result))
             }
         }*/
     }
 
-    func setError() {
-
+    mutating func setError(_ message: String) {
+        self.errorMessage = message
+        self.error = true
     }
 
 }

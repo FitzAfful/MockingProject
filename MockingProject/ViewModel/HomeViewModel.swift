@@ -10,16 +10,11 @@ import Foundation
 import Alamofire
 
 protocol HomeViewModelProtocol {
-    mutating func fetchEmployees()
-    mutating func setError(_ message: String)
+    func fetchEmployees(completion: @escaping ([Employee]?, String?) -> Void)
     var employees: [Employee] { get  set }
-    var errorMessage: String? { get set }
-    var error: Bool { get set }
 }
 
-struct HomeViewModel: HomeViewModelProtocol {
-    var errorMessage: String?
-    var error: Bool = false
+class HomeViewModel: HomeViewModelProtocol {
 
     var apiManager: APIManager?
     var employees: [Employee] = []
@@ -28,28 +23,25 @@ struct HomeViewModel: HomeViewModelProtocol {
         self.apiManager = manager
     }
 
-    mutating func setAPIManager(manager: APIManager) {
+    func setAPIManager(manager: APIManager) {
         self.apiManager = manager
     }
 
-    mutating func fetchEmployees() {
-        /*self.apiManager!.getEmployees { (result: DataResponse<EmployeesResponse,AFError>) in
+    func fetchEmployees(completion: @escaping ([Employee]?, String?) -> Void) {
+        self.apiManager!.getEmployees { (result: DataResponse<EmployeesResponse,AFError>) in
             switch result.result {
             case .success(let response):
                 if(response.status == "success"){
+                    self.employees.append(contentsOf: response.data)
                     self.employees = response.data
+                    completion(self.employees, nil)
                     return
                 }
-                self.setError(BaseNetworkManager().getErrorMessage(response: result))
+                completion(nil, BaseNetworkManager().getErrorMessage(response: result))
             case .failure:
-                self.setError(BaseNetworkManager().getErrorMessage(response: result))
+                completion(nil, BaseNetworkManager().getErrorMessage(response: result))
             }
-        }*/
-    }
-
-    mutating func setError(_ message: String) {
-        self.errorMessage = message
-        self.error = true
+        }
     }
 
 }

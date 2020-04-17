@@ -32,16 +32,19 @@ class ObservableController: UIViewController {
 		self.tableView.dataSource = self
 		self.tableView.delegate = self
 		self.tableView.tableFooterView = UIView()
-        self.tableView.bind(to: viewModel.employees)
+        viewModel.employees.valueChanged = { [weak self] (_) in
+            self?.tableView.reloadData()
+        }
 		self.tableView.es.addPullToRefresh {
-			self.getEmployees()
+            self.viewModel.fetchEmployees()
 		}
 		self.tableView.es.startPullToRefresh()
 	}
 
-	func getEmployees() {
-        viewModel.fetchEmployees()
-	}
+    func showErrorMessage(_ message: String){
+        self.showTableView()
+        self.showAlert(title: "Error", message: message)
+    }
 
 	func showLoader() {
 		self.tableView.isHidden = true
@@ -108,19 +111,10 @@ class Observable<T> {
     var value: T {
         didSet {
             DispatchQueue.main.async {
-                self.valueChanged?(self.value)
+                self.valueChanged(self.value)
             }
         }
     }
-    var valueChanged: ((T) -> Void)?
-}
 
-
-extension UITableView {
-    func bind(to observable: Observable<T>) {
-        observable.valueChanged = { [weak self] newValue in
-            self?.reloadData()
-        }
-    }
-
+    var valueChanged: ((T) -> Void)
 }

@@ -21,9 +21,6 @@ class HomeController: UIViewController {
         return viewModel
     }()
 
-	var manager: APIManager!
-	var employees: [Employee] = []
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		showLoader()
@@ -31,7 +28,6 @@ class HomeController: UIViewController {
 	}
 
 	func setupTableView() {
-		manager = APIManager()
 		self.tableView.register(UINib(nibName: "EmployeeCell", bundle: nil), forCellReuseIdentifier: "EmployeeCell")
 		self.tableView.dataSource = self
 		self.tableView.delegate = self
@@ -43,19 +39,14 @@ class HomeController: UIViewController {
 	}
 
 	func getEmployees() {
-        manager.getEmployees { (result: DataResponse<EmployeesResponse, AFError>) in
-            switch result.result {
-                case .success(let response):
-                    if response.status == "success" {
-                        self.employees = response.data
-                        self.showTableView()
-                        return
-                    }
-                    self.showAlert(title: "Error", message: BaseNetworkManager().getErrorMessage(response: result))
-                case .failure:
-                    self.showAlert(title: "Error", message: BaseNetworkManager().getErrorMessage(response: result))
+        viewModel.fetchEmployees { (employees, errorMessage) in
+            if employees != nil {
+                self.tableView.reloadData()
+            }else if errorMessage != nil {
+                self.showTableView()
+                self.showAlert(title: "Error", message: errorMessage!)
             }
-		}
+        }
 	}
 
 	func showLoader() {
@@ -93,19 +84,19 @@ class HomeController: UIViewController {
 
 extension HomeController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let item = self.employees[indexPath.row]
+        let item = self.viewModel.employees[indexPath.row]
 		self.moveToDetails(item: item)
 	}
 }
 
 extension HomeController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return employees.count
+		return self.viewModel.employees.count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "EmployeeCell", for: indexPath) as! EmployeeCell
-		cell.item = self.employees[indexPath.row]
+		cell.item = self.self.viewModel.employees[indexPath.row]
 		return cell
 	}
 

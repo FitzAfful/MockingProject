@@ -32,8 +32,8 @@ class ObservableController: UIViewController {
 		self.tableView.dataSource = self
 		self.tableView.delegate = self
 		self.tableView.tableFooterView = UIView()
-        viewModel.employees.valueChanged = { [weak self] (_) in
-            self?.tableView.reloadData()
+        viewModel.employees.bind { (employees) in
+            self.tableView.reloadData()
         }
 		self.tableView.es.addPullToRefresh {
             self.viewModel.fetchEmployees()
@@ -100,21 +100,4 @@ extension ObservableController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 96.0
 	}
-}
-
-class Observable<T> {
-
-    init(_ newValue: T) {
-        value = newValue
-    }
-
-    var value: T {
-        didSet {
-            DispatchQueue.main.async {
-                self.valueChanged(self.value)
-            }
-        }
-    }
-
-    var valueChanged: ((T) -> Void)
 }

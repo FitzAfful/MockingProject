@@ -42,7 +42,7 @@ class HomeController: UIViewController {
         viewModel.fetchEmployees { (employees, errorMessage) in
             if employees != nil {
                 self.tableView.reloadData()
-            }else if errorMessage != nil {
+            } else if errorMessage != nil {
                 self.showTableView()
                 self.showAlert(title: "Error", message: errorMessage!)
             }

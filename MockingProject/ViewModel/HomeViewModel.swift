@@ -32,7 +32,6 @@ class HomeViewModel: HomeViewModelProtocol {
             switch result.result {
             case .success(let response):
                 if response.status == "success" {
-                    self.employees.append(contentsOf: response.data)
                     self.employees = response.data
                     completion(self.employees, nil)
                     return

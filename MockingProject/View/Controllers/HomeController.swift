@@ -41,7 +41,7 @@ class HomeController: UIViewController {
 	func getEmployees() {
         viewModel.fetchEmployees { (employees, errorMessage) in
             if employees != nil {
-                self.tableView.reloadData()
+                self.showTableView()
             } else if errorMessage != nil {
                 self.showTableView()
                 self.showAlert(title: "Error", message: errorMessage!)
@@ -65,10 +65,14 @@ class HomeController: UIViewController {
 	func showTableView() {
 		DispatchQueue.main.async {
 			self.tableView.es.stopPullToRefresh()
-			self.tableView.reloadData()
-			self.tableView.isHidden = false
-			self.emptyView.isHidden = true
-			self.activityIndicator.isHidden = true
+            if self.viewModel.employees.isEmpty {
+                self.showEmptyView()
+            } else {
+                self.tableView.reloadData()
+                self.tableView.isHidden = false
+                self.emptyView.isHidden = true
+                self.activityIndicator.isHidden = true
+            }
 		}
 	}
 

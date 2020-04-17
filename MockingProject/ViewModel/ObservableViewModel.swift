@@ -12,7 +12,7 @@ import Alamofire
 protocol ObservableViewModelProtocol {
     func fetchEmployees()
     func setError(_ message: String)
-    var employees: Observable<[Employee]> { get  set }
+    var employees: Observable<[Employee]> { get  set } //1
     var errorMessage: Observable<String?> { get set }
     var error: Observable<Bool> { get set }
 }
@@ -22,7 +22,7 @@ class ObservableViewModel: ObservableViewModelProtocol {
     var error: Observable<Bool> = Observable(false)
 
     var apiManager: APIManager?
-    var employees: Observable<[Employee]> = Observable([])
+    var employees: Observable<[Employee]> = Observable([]) //2
 
     init(manager: APIManager = APIManager()) {
         self.apiManager = manager
@@ -37,7 +37,7 @@ class ObservableViewModel: ObservableViewModelProtocol {
             switch result.result {
             case .success(let response):
                 if response.status == "success" {
-                    self.employees = Observable(response.data)
+                    self.employees.value = response.data //3
                     return
                 }
                 self.setError(BaseNetworkManager().getErrorMessage(response: result))
@@ -48,8 +48,8 @@ class ObservableViewModel: ObservableViewModelProtocol {
     }
 
     func setError(_ message: String) {
-        self.errorMessage = Observable(message)
-        self.error = Observable(true)
+        self.errorMessage.value = message
+        self.error.value = true
     }
 
 }

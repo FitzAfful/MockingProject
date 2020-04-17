@@ -32,12 +32,12 @@ class ObservableController: UIViewController {
 		self.tableView.dataSource = self
 		self.tableView.delegate = self
 		self.tableView.tableFooterView = UIView()
-        viewModel.employees.bind { (_) in
-            self.tableView.reloadData()
-        }
 		self.tableView.es.addPullToRefresh {
             self.viewModel.fetchEmployees()
 		}
+        viewModel.employees.bind { (_) in
+            self.tableView.reloadData()
+        }
 		self.tableView.es.startPullToRefresh()
 	}
 
@@ -53,21 +53,25 @@ class ObservableController: UIViewController {
 		self.activityIndicator.startAnimating()
 	}
 
-	func showEmptyView() {
-		self.tableView.isHidden = true
-		self.emptyView.isHidden = false
-		self.activityIndicator.isHidden = true
-	}
-
 	func showTableView() {
-		DispatchQueue.main.async {
-			self.tableView.es.stopPullToRefresh()
-			self.tableView.reloadData()
-			self.tableView.isHidden = false
-			self.emptyView.isHidden = true
-			self.activityIndicator.isHidden = true
-		}
-	}
+        DispatchQueue.main.async {
+            self.tableView.es.stopPullToRefresh()
+            if self.viewModel.employees.value.isEmpty {
+                self.showEmptyView()
+            } else {
+                self.tableView.reloadData()
+                self.tableView.isHidden = false
+                self.emptyView.isHidden = true
+                self.activityIndicator.isHidden = true
+            }
+        }
+    }
+
+    func showEmptyView() {
+        self.tableView.isHidden = true
+        self.emptyView.isHidden = false
+        self.activityIndicator.isHidden = true
+    }
 
 	func moveToDetails(item: Employee) {
 		DispatchQueue.main.async {

@@ -32,7 +32,7 @@ class ObservableController: UIViewController {
 		self.tableView.dataSource = self
 		self.tableView.delegate = self
 		self.tableView.tableFooterView = UIView()
-        viewModel.employees.bind { (employees) in
+        viewModel.employees.bind { (_) in
             self.tableView.reloadData()
         }
 		self.tableView.es.addPullToRefresh {
@@ -41,7 +41,7 @@ class ObservableController: UIViewController {
 		self.tableView.es.startPullToRefresh()
 	}
 
-    func showErrorMessage(_ message: String){
+    func showErrorMessage(_ message: String) {
         self.showTableView()
         self.showAlert(title: "Error", message: message)
     }

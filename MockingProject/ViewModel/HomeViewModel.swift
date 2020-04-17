@@ -28,10 +28,10 @@ class HomeViewModel: HomeViewModelProtocol {
     }
 
     func fetchEmployees(completion: @escaping ([Employee]?, String?) -> Void) {
-        self.apiManager!.getEmployees { (result: DataResponse<EmployeesResponse,AFError>) in
+        self.apiManager!.getEmployees { (result: DataResponse<EmployeesResponse, AFError>) in
             switch result.result {
             case .success(let response):
-                if(response.status == "success"){
+                if response.status == "success" {
                     self.employees.append(contentsOf: response.data)
                     self.employees = response.data
                     completion(self.employees, nil)

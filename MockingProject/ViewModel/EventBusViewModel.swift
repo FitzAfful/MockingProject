@@ -37,11 +37,13 @@ class EventBusViewModel: EventBusModelProtocol {
             case .success(let response):
                 if response.status == "success" {
                     self.employees = response.data
-                    return
+                } else {
+                    self.setError(BaseNetworkManager().getErrorMessage(response: result))
                 }
-                self.setError(BaseNetworkManager().getErrorMessage(response: result))
+                self.callEvent()
             case .failure:
-            self.setError(BaseNetworkManager().getErrorMessage(response: result))
+                self.setError(BaseNetworkManager().getErrorMessage(response: result))
+                self.callEvent()
             }
         }
     }

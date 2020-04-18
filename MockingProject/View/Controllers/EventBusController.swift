@@ -24,11 +24,11 @@ class EventBusController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		showLoader()
-        setupEventBus()
+        setupEventBusSubscriber()
 		setupTableView()
 	}
 
-    func setupEventBus() {
+    func setupEventBusSubscriber() {
         _ = EventBus.onMainThread(self, name: "fetchEmployees") { result in
             if let event = result!.object as? EmployeesEvent {
                 if event.employees != nil {

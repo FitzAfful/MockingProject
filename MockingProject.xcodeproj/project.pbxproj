@@ -19,6 +19,9 @@
 		845F787324492FE800080A88 /* ObservableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F787224492FE800080A88 /* ObservableController.swift */; };
 		845F78752449385700080A88 /* ObservableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F78742449385700080A88 /* ObservableViewModel.swift */; };
 		845F7879244A65E500080A88 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F7878244A65E500080A88 /* Observable.swift */; };
+		845F787B244A7A9D00080A88 /* EventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F787A244A7A9D00080A88 /* EventBus.swift */; };
+		845F787D244A7AF400080A88 /* EmployeesEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F787C244A7AF400080A88 /* EmployeesEvent.swift */; };
+		845F787F244A7B8200080A88 /* EventBusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F787E244A7B8200080A88 /* EventBusViewModel.swift */; };
 		84D22D152435EE3000358B5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D142435EE3000358B5F /* AppDelegate.swift */; };
 		84D22D172435EE3000358B5F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D162435EE3000358B5F /* SceneDelegate.swift */; };
 		84D22D1C2435EE3000358B5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D22D1A2435EE3000358B5F /* Main.storyboard */; };
@@ -113,6 +116,9 @@
 		845F787224492FE800080A88 /* ObservableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableController.swift; sourceTree = "<group>"; };
 		845F78742449385700080A88 /* ObservableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableViewModel.swift; sourceTree = "<group>"; };
 		845F7878244A65E500080A88 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		845F787A244A7A9D00080A88 /* EventBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBus.swift; sourceTree = "<group>"; };
+		845F787C244A7AF400080A88 /* EmployeesEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesEvent.swift; sourceTree = "<group>"; };
+		845F787E244A7B8200080A88 /* EventBusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventBusViewModel.swift; sourceTree = "<group>"; };
 		84D22D112435EE3000358B5F /* Development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Development.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D22D142435EE3000358B5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84D22D162435EE3000358B5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -224,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				84457C2A243893D40071AD9B /* HomeViewModel.swift */,
+				845F787E244A7B8200080A88 /* EventBusViewModel.swift */,
 				845F78742449385700080A88 /* ObservableViewModel.swift */,
 			);
 			path = ViewModel;
@@ -300,6 +307,7 @@
 				84D22D6A243631C300358B5F /* Employee.swift */,
 				84D22D6B243631C300358B5F /* EmployeeResponse.swift */,
 				84D22D69243631C300358B5F /* EmployeesResponse.swift */,
+				845F787C244A7AF400080A88 /* EmployeesEvent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -338,6 +346,7 @@
 			children = (
 				84D855E0243EC4850013E2A8 /* EnvironmentHelper.swift */,
 				845F7878244A65E500080A88 /* Observable.swift */,
+				845F787A244A7A9D00080A88 /* EventBus.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -673,6 +682,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				845F7879244A65E500080A88 /* Observable.swift in Sources */,
+				845F787B244A7A9D00080A88 /* EventBus.swift in Sources */,
 				84D22D522435F2BB00358B5F /* APIManager.swift in Sources */,
 				845F787324492FE800080A88 /* ObservableController.swift in Sources */,
 				84D22D6D243631C300358B5F /* Employee.swift in Sources */,
@@ -685,11 +695,13 @@
 				84D22D6C243631C300358B5F /* EmployeesResponse.swift in Sources */,
 				84D22D542435F2BB00358B5F /* BaseNetworkManager.swift in Sources */,
 				84D22D532435F2BB00358B5F /* APIRouter.swift in Sources */,
+				845F787F244A7B8200080A88 /* EventBusViewModel.swift in Sources */,
 				84457C2B243893D40071AD9B /* HomeViewModel.swift in Sources */,
 				84D22D622435F2BB00358B5F /* HomeController.swift in Sources */,
 				84D22D152435EE3000358B5F /* AppDelegate.swift in Sources */,
 				84D22D172435EE3000358B5F /* SceneDelegate.swift in Sources */,
 				84D22D652435F2BB00358B5F /* EmployeeCell.swift in Sources */,
+				845F787D244A7AF400080A88 /* EmployeesEvent.swift in Sources */,
 				845F78752449385700080A88 /* ObservableViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

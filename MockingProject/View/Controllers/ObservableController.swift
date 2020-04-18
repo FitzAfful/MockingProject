@@ -32,12 +32,13 @@ class ObservableController: UIViewController {
 		self.tableView.dataSource = self
 		self.tableView.delegate = self
 		self.tableView.tableFooterView = UIView()
+        viewModel.employees.bind { (_) in
+            print("Binded")
+            self.tableView.reloadData()
+        }
 		self.tableView.es.addPullToRefresh {
             self.viewModel.fetchEmployees()
 		}
-        viewModel.employees.bind { (_) in
-            self.tableView.reloadData()
-        }
 		self.tableView.es.startPullToRefresh()
 	}
 

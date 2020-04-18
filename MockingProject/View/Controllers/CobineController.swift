@@ -8,24 +8,33 @@
 
 import UIKit
 import ESPullToRefresh
-import Alamofire
+import Combine
 
-class HomeController: UIViewController {
+class CombineController: UIViewController {
 
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var emptyView: UIView!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-    lazy var viewModel: HomeViewModel = {
-        let viewModel = HomeViewModel()
+    lazy var viewModel: CombineViewModel = {
+        let viewModel = CombineViewModel()
         return viewModel
     }()
+
+    private var cancellables: Set<AnyCancellable> = []
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		showLoader()
 		setupTableView()
+        bindViewModel()
 	}
+
+    private func bindViewModel() {
+        viewModel.$employees.sink { [weak self] _ in
+            self?.showTableView()
+        }.store(in: &cancellables)
+    }
 
 	func setupTableView() {
 		self.tableView.register(UINib(nibName: "EmployeeCell", bundle: nil), forCellReuseIdentifier: "EmployeeCell")
@@ -33,20 +42,9 @@ class HomeController: UIViewController {
 		self.tableView.delegate = self
 		self.tableView.tableFooterView = UIView()
 		self.tableView.es.addPullToRefresh {
-			self.getEmployees()
+            self.viewModel.fetchEmployees()
 		}
 		self.tableView.es.startPullToRefresh()
-	}
-
-	func getEmployees() {
-        viewModel.fetchEmployees { (employees, errorMessage) in
-            if employees != nil {
-                self.showTableView()
-            } else if errorMessage != nil {
-                self.showTableView()
-                self.showAlert(title: "Error", message: errorMessage!)
-            }
-        }
 	}
 
 	func showLoader() {
@@ -65,14 +63,10 @@ class HomeController: UIViewController {
 	func showTableView() {
 		DispatchQueue.main.async {
 			self.tableView.es.stopPullToRefresh()
-            if self.viewModel.employees.isEmpty {
-                self.showEmptyView()
-            } else {
-                self.tableView.reloadData()
-                self.tableView.isHidden = false
-                self.emptyView.isHidden = true
-                self.activityIndicator.isHidden = true
-            }
+			self.tableView.reloadData()
+			self.tableView.isHidden = false
+			self.emptyView.isHidden = true
+			self.activityIndicator.isHidden = true
 		}
 	}
 
@@ -86,21 +80,21 @@ class HomeController: UIViewController {
 
 }
 
-extension HomeController: UITableViewDelegate {
+extension CombineController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = self.viewModel.employees[indexPath.row]
+		let item = self.viewModel.employees[indexPath.row]
 		self.moveToDetails(item: item)
 	}
 }
 
-extension HomeController: UITableViewDataSource {
+extension CombineController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return self.viewModel.employees.count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "EmployeeCell", for: indexPath) as! EmployeeCell
-		cell.item = self.self.viewModel.employees[indexPath.row]
+        cell.item = self.viewModel.employees[indexPath.row]
 		return cell
 	}
 

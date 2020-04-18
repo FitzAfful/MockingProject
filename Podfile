@@ -14,6 +14,8 @@ target 'Development' do
     pod 'Resolver'
     pod 'AppCenter'
     pod 'SwiftLint'
+    pod 'RxSwift'
+    pod 'RxCocoa'
 
     target 'MockingProjectTests' do
         inherit! :search_paths
@@ -21,6 +23,8 @@ target 'Development' do
 
     target 'Test' do
         inherit! :search_paths
+        pod 'RxBlocking'
+        pod 'RxTest'
     end
 
     target 'Production' do

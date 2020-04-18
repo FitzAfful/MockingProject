@@ -10,22 +10,35 @@ import UIKit
 import ESPullToRefresh
 import Alamofire
 
-class HomeController: UIViewController {
+class EventBusController: UIViewController {
 
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var emptyView: UIView!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-    lazy var viewModel: HomeViewModel = {
-        let viewModel = HomeViewModel()
+    lazy var viewModel: EventBusViewModel = {
+        let viewModel = EventBusViewModel()
         return viewModel
     }()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		showLoader()
+        setupEventBusSubscriber()
 		setupTableView()
 	}
+
+    func setupEventBusSubscriber() {
+        _ = EventBus.onMainThread(self, name: "fetchEmployees") { result in
+            if let event = result!.object as? EmployeesEvent {
+                if event.employees != nil {
+                    self.showTableView()
+                } else if let message = event.errorMessage {
+                    self.showAlert(title: "Error", message: message)
+                }
+            }
+        }
+    }
 
 	func setupTableView() {
 		self.tableView.register(UINib(nibName: "EmployeeCell", bundle: nil), forCellReuseIdentifier: "EmployeeCell")
@@ -39,14 +52,7 @@ class HomeController: UIViewController {
 	}
 
 	func getEmployees() {
-        viewModel.fetchEmployees { (employees, errorMessage) in
-            if employees != nil {
-                self.showTableView()
-            } else if errorMessage != nil {
-                self.showTableView()
-                self.showAlert(title: "Error", message: errorMessage!)
-            }
-        }
+        viewModel.fetchEmployees()
 	}
 
 	func showLoader() {
@@ -86,14 +92,14 @@ class HomeController: UIViewController {
 
 }
 
-extension HomeController: UITableViewDelegate {
+extension EventBusController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = self.viewModel.employees[indexPath.row]
 		self.moveToDetails(item: item)
 	}
 }
 
-extension HomeController: UITableViewDataSource {
+extension EventBusController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return self.viewModel.employees.count
 	}

@@ -9,15 +9,18 @@
 import UIKit
 import ESPullToRefresh
 import Alamofire
+import RxSwift
+import RxCocoa
 
-class HomeController: UIViewController {
+class RxSwiftController: UIViewController {
 
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var emptyView: UIView!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    let disposeBag = DisposeBag()
 
-    lazy var viewModel: HomeViewModel = {
-        let viewModel = HomeViewModel()
+    lazy var viewModel: RxSwiftViewModel = {
+        let viewModel = RxSwiftViewModel()
         return viewModel
     }()
 
@@ -25,29 +28,37 @@ class HomeController: UIViewController {
 		super.viewDidLoad()
 		showLoader()
 		setupTableView()
+        setupBindings()
 	}
+
+    func setupBindings() {
+        viewModel.employees.drive(onNext: {[unowned self] (_) in
+            self.showTableView()
+        }).disposed(by: disposeBag)
+
+        viewModel.errorMessage.drive(onNext: { (_message) in
+            if let message = _message {
+                self.showAlert(title: "Error", message: message)
+            }
+        }).disposed(by: disposeBag)
+    }
 
 	func setupTableView() {
 		self.tableView.register(UINib(nibName: "EmployeeCell", bundle: nil), forCellReuseIdentifier: "EmployeeCell")
 		self.tableView.dataSource = self
 		self.tableView.delegate = self
 		self.tableView.tableFooterView = UIView()
+
 		self.tableView.es.addPullToRefresh {
-			self.getEmployees()
+            self.viewModel.fetchEmployees()
 		}
 		self.tableView.es.startPullToRefresh()
 	}
 
-	func getEmployees() {
-        viewModel.fetchEmployees { (employees, errorMessage) in
-            if employees != nil {
-                self.showTableView()
-            } else if errorMessage != nil {
-                self.showTableView()
-                self.showAlert(title: "Error", message: errorMessage!)
-            }
-        }
-	}
+    func showErrorMessage(_ message: String) {
+        self.showTableView()
+        self.showAlert(title: "Error", message: message)
+    }
 
 	func showLoader() {
 		self.tableView.isHidden = true
@@ -56,16 +67,10 @@ class HomeController: UIViewController {
 		self.activityIndicator.startAnimating()
 	}
 
-	func showEmptyView() {
-		self.tableView.isHidden = true
-		self.emptyView.isHidden = false
-		self.activityIndicator.isHidden = true
-	}
-
 	func showTableView() {
-		DispatchQueue.main.async {
-			self.tableView.es.stopPullToRefresh()
-            if self.viewModel.employees.isEmpty {
+        DispatchQueue.main.async {
+            self.tableView.es.stopPullToRefresh()
+            if self.viewModel.numberOfEmployees == 0 {
                 self.showEmptyView()
             } else {
                 self.tableView.reloadData()
@@ -73,8 +78,14 @@ class HomeController: UIViewController {
                 self.emptyView.isHidden = true
                 self.activityIndicator.isHidden = true
             }
-		}
-	}
+        }
+    }
+
+    func showEmptyView() {
+        self.tableView.isHidden = true
+        self.emptyView.isHidden = false
+        self.activityIndicator.isHidden = true
+    }
 
 	func moveToDetails(item: Employee) {
 		DispatchQueue.main.async {
@@ -86,21 +97,24 @@ class HomeController: UIViewController {
 
 }
 
-extension HomeController: UITableViewDelegate {
+extension RxSwiftController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = self.viewModel.employees[indexPath.row]
-		self.moveToDetails(item: item)
+        if let item = viewModel.modelForIndex(at: indexPath.row) {
+            self.moveToDetails(item: item)
+        }
 	}
 }
 
-extension HomeController: UITableViewDataSource {
+extension RxSwiftController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return self.viewModel.employees.count
+        return self.viewModel.numberOfEmployees
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "EmployeeCell", for: indexPath) as! EmployeeCell
-		cell.item = self.self.viewModel.employees[indexPath.row]
+        if let item = viewModel.modelForIndex(at: indexPath.row) {
+            cell.item = item
+        }
 		return cell
 	}
 

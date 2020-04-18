@@ -10,14 +10,14 @@ import UIKit
 import ESPullToRefresh
 import Alamofire
 
-class HomeController: UIViewController {
+class ObservableController: UIViewController {
 
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var emptyView: UIView!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-    lazy var viewModel: HomeViewModel = {
-        let viewModel = HomeViewModel()
+    lazy var viewModel: ObservableViewModel = {
+        let viewModel = ObservableViewModel()
         return viewModel
     }()
 
@@ -32,22 +32,19 @@ class HomeController: UIViewController {
 		self.tableView.dataSource = self
 		self.tableView.delegate = self
 		self.tableView.tableFooterView = UIView()
+        viewModel.employees.bind { (_) in
+            self.showTableView()
+        }
 		self.tableView.es.addPullToRefresh {
-			self.getEmployees()
+            self.viewModel.fetchEmployees()
 		}
 		self.tableView.es.startPullToRefresh()
 	}
 
-	func getEmployees() {
-        viewModel.fetchEmployees { (employees, errorMessage) in
-            if employees != nil {
-                self.showTableView()
-            } else if errorMessage != nil {
-                self.showTableView()
-                self.showAlert(title: "Error", message: errorMessage!)
-            }
-        }
-	}
+    func showErrorMessage(_ message: String) {
+        self.showTableView()
+        self.showAlert(title: "Error", message: message)
+    }
 
 	func showLoader() {
 		self.tableView.isHidden = true
@@ -56,16 +53,10 @@ class HomeController: UIViewController {
 		self.activityIndicator.startAnimating()
 	}
 
-	func showEmptyView() {
-		self.tableView.isHidden = true
-		self.emptyView.isHidden = false
-		self.activityIndicator.isHidden = true
-	}
-
 	func showTableView() {
-		DispatchQueue.main.async {
-			self.tableView.es.stopPullToRefresh()
-            if self.viewModel.employees.isEmpty {
+        DispatchQueue.main.async {
+            self.tableView.es.stopPullToRefresh()
+            if self.viewModel.employees.value.isEmpty {
                 self.showEmptyView()
             } else {
                 self.tableView.reloadData()
@@ -73,8 +64,14 @@ class HomeController: UIViewController {
                 self.emptyView.isHidden = true
                 self.activityIndicator.isHidden = true
             }
-		}
-	}
+        }
+    }
+
+    func showEmptyView() {
+        self.tableView.isHidden = true
+        self.emptyView.isHidden = false
+        self.activityIndicator.isHidden = true
+    }
 
 	func moveToDetails(item: Employee) {
 		DispatchQueue.main.async {
@@ -86,21 +83,21 @@ class HomeController: UIViewController {
 
 }
 
-extension HomeController: UITableViewDelegate {
+extension ObservableController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = self.viewModel.employees[indexPath.row]
+        let item = self.viewModel.employees.value[indexPath.row]
 		self.moveToDetails(item: item)
 	}
 }
 
-extension HomeController: UITableViewDataSource {
+extension ObservableController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return self.viewModel.employees.count
+        return self.viewModel.employees.value.count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "EmployeeCell", for: indexPath) as! EmployeeCell
-		cell.item = self.self.viewModel.employees[indexPath.row]
+        cell.item = self.viewModel.employees.value[indexPath.row]
 		return cell
 	}
 

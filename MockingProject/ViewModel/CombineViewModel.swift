@@ -8,16 +8,14 @@
 
 import Foundation
 import Alamofire
+import Combine
 
-protocol HomeViewModelProtocol {
-    func fetchEmployees(completion: @escaping ([Employee]?, String?) -> Void)
-    var employees: [Employee] { get  set }
-}
-
-class HomeViewModel: HomeViewModelProtocol {
+class CombineViewModel: ObservableObject {
+    var errorMessage: String?
+    var error: Bool = false
 
     var apiManager: APIManager?
-    var employees: [Employee] = []
+    @Published var employees: [Employee] = []
 
     init(manager: APIManager = APIManager()) {
         self.apiManager = manager
@@ -27,20 +25,24 @@ class HomeViewModel: HomeViewModelProtocol {
         self.apiManager = manager
     }
 
-    func fetchEmployees(completion: @escaping ([Employee]?, String?) -> Void) {
+    func fetchEmployees() {
         self.apiManager!.getEmployees { (result: DataResponse<EmployeesResponse, AFError>) in
             switch result.result {
             case .success(let response):
                 if response.status == "success" {
                     self.employees = response.data
-                    completion(self.employees, nil)
-                    return
+                } else {
+                    self.setError(BaseNetworkManager().getErrorMessage(response: result))
                 }
-                completion(nil, BaseNetworkManager().getErrorMessage(response: result))
             case .failure:
-                completion(nil, BaseNetworkManager().getErrorMessage(response: result))
+                self.setError(BaseNetworkManager().getErrorMessage(response: result))
             }
         }
+    }
+
+    func setError(_ message: String) {
+        self.errorMessage = message
+        self.error = true
     }
 
 }

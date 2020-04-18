@@ -20,6 +20,16 @@ PODS:
   - Mocker (2.1.0)
   - Nuke (8.4.1)
   - Resolver (1.0.7)
+  - RxBlocking (5.1.1):
+    - RxSwift (~> 5)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
+  - RxTest (5.1.1):
+    - RxSwift (~> 5)
   - SwiftLint (0.39.2)
 
 DEPENDENCIES:
@@ -31,6 +41,10 @@ DEPENDENCIES:
   - Mocker
   - Nuke
   - Resolver
+  - RxBlocking
+  - RxCocoa
+  - RxSwift
+  - RxTest
   - SwiftLint
 
 SPEC REPOS:
@@ -43,6 +57,11 @@ SPEC REPOS:
     - Mocker
     - Nuke
     - Resolver
+    - RxBlocking
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - RxTest
     - SwiftLint
 
 SPEC CHECKSUMS:
@@ -54,8 +73,13 @@ SPEC CHECKSUMS:
   Mocker: 55f3d932b93e1568f3cf15bd697348c06fc676ee
   Nuke: d780e3507a86b86c589ab3cc5cd302d5456f06fb
   Resolver: da30396fcabb46790959209430a4a0a9e6e39849
+  RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxTest: 711632d5644dffbeb62c936a521b5b008a1e1faa
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
 
-PODFILE CHECKSUM: b08cb7b3f4dd209c7a7fdf153a74f9b0659e0039
+PODFILE CHECKSUM: 72c4296549fe2e32e84aa39a5e5c29a067fe6b17
 
 COCOAPODS: 1.8.4

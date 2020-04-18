@@ -38,7 +38,6 @@ class ObservableViewModel: ObservableViewModelProtocol {
             case .success(let response):
                 if response.status == "success" {
                     self.employees.value = response.data //3
-                    print(self.employees.value)
                     return
                 }
                 self.setError(BaseNetworkManager().getErrorMessage(response: result))

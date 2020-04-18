@@ -40,6 +40,11 @@
                                             <segue destination="jwR-XU-yKU" kind="show" id="4NC-fp-GOO"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Combine" id="xgs-et-4vu">
+                                        <connections>
+                                            <segue destination="57j-qP-wM8" kind="show" id="kop-2A-fpM"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -310,6 +315,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Wy-Wt-QoN" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1741" y="820"/>
+        </scene>
+        <!--CombineController-->
+        <scene sceneID="Tcc-ap-5cl">
+            <objects>
+                <viewController storyboardIdentifier="CombineController" id="57j-qP-wM8" customClass="CombineController" customModule="Development" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ifJ-Im-OZR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RSV-ua-TGH">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIt-jV-o7C">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="SIt-Be-NRC">
+                                <rect key="frame" x="188.5" y="456.5" width="37" height="37"/>
+                                <color key="color" red="0.1333333333" green="0.30588235289999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZIt-jV-o7C" firstAttribute="leading" secondItem="7bI-1n-SN6" secondAttribute="leading" id="3zC-eS-jlt"/>
+                            <constraint firstItem="7bI-1n-SN6" firstAttribute="bottom" secondItem="ZIt-jV-o7C" secondAttribute="bottom" id="B0v-kx-Ilp"/>
+                            <constraint firstItem="7bI-1n-SN6" firstAttribute="trailing" secondItem="RSV-ua-TGH" secondAttribute="trailing" id="E82-eH-DIC"/>
+                            <constraint firstItem="SIt-Be-NRC" firstAttribute="centerX" secondItem="7bI-1n-SN6" secondAttribute="centerX" id="SBh-XX-hmi"/>
+                            <constraint firstItem="ZIt-jV-o7C" firstAttribute="top" secondItem="7bI-1n-SN6" secondAttribute="top" id="SFP-uV-jjT"/>
+                            <constraint firstItem="RSV-ua-TGH" firstAttribute="leading" secondItem="7bI-1n-SN6" secondAttribute="leading" id="bRC-fe-lGp"/>
+                            <constraint firstItem="RSV-ua-TGH" firstAttribute="top" secondItem="7bI-1n-SN6" secondAttribute="top" id="ccV-tT-JGP"/>
+                            <constraint firstItem="7bI-1n-SN6" firstAttribute="trailing" secondItem="ZIt-jV-o7C" secondAttribute="trailing" id="jnz-cn-tXo"/>
+                            <constraint firstItem="SIt-Be-NRC" firstAttribute="centerY" secondItem="7bI-1n-SN6" secondAttribute="centerY" id="qdj-h7-4yj"/>
+                            <constraint firstItem="7bI-1n-SN6" firstAttribute="bottom" secondItem="RSV-ua-TGH" secondAttribute="bottom" id="yWz-4g-dDp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7bI-1n-SN6"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CombineController" id="avM-v0-67f"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="SIt-Be-NRC" id="Jms-cK-B1p"/>
+                        <outlet property="emptyView" destination="ZIt-jV-o7C" id="9f3-ci-3r1"/>
+                        <outlet property="tableView" destination="RSV-ua-TGH" id="yMa-7g-Ext"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KE3-pT-aKd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2551" y="820"/>
         </scene>
     </scenes>
     <resources>

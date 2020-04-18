@@ -25,6 +25,7 @@
 		845F7881244A7CB800080A88 /* EventBusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F7880244A7CB800080A88 /* EventBusController.swift */; };
 		845F7883244A99B700080A88 /* RxSwiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F7882244A99B700080A88 /* RxSwiftController.swift */; };
 		845F7885244A99E400080A88 /* RxSwiftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F7884244A99E400080A88 /* RxSwiftViewModel.swift */; };
+		845F7887244AF4C500080A88 /* CombineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F7886244AF4C500080A88 /* CombineViewModel.swift */; };
 		84D22D152435EE3000358B5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D142435EE3000358B5F /* AppDelegate.swift */; };
 		84D22D172435EE3000358B5F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D162435EE3000358B5F /* SceneDelegate.swift */; };
 		84D22D1C2435EE3000358B5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D22D1A2435EE3000358B5F /* Main.storyboard */; };
@@ -125,6 +126,7 @@
 		845F7880244A7CB800080A88 /* EventBusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventBusController.swift; sourceTree = "<group>"; };
 		845F7882244A99B700080A88 /* RxSwiftController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSwiftController.swift; sourceTree = "<group>"; };
 		845F7884244A99E400080A88 /* RxSwiftViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSwiftViewModel.swift; sourceTree = "<group>"; };
+		845F7886244AF4C500080A88 /* CombineViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineViewModel.swift; sourceTree = "<group>"; };
 		84D22D112435EE3000358B5F /* Development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Development.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D22D142435EE3000358B5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84D22D162435EE3000358B5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				84457C2A243893D40071AD9B /* HomeViewModel.swift */,
 				845F787E244A7B8200080A88 /* EventBusViewModel.swift */,
 				845F78742449385700080A88 /* ObservableViewModel.swift */,
+				845F7886244AF4C500080A88 /* CombineViewModel.swift */,
 				845F7884244A99E400080A88 /* RxSwiftViewModel.swift */,
 			);
 			path = ViewModel;
@@ -716,6 +719,7 @@
 				84D22D632435F2BB00358B5F /* DetailController.swift in Sources */,
 				84D22D682435F2BB00358B5F /* ThirdPartyExtensions.swift in Sources */,
 				84D22D672435F2BB00358B5F /* UIViewController+Extensions.swift in Sources */,
+				845F7887244AF4C500080A88 /* CombineViewModel.swift in Sources */,
 				84FA9B04244881A1003A84C4 /* CobineController.swift in Sources */,
 				84D22D6E243631C300358B5F /* EmployeeResponse.swift in Sources */,
 				84D855E1243EC4850013E2A8 /* EnvironmentHelper.swift in Sources */,

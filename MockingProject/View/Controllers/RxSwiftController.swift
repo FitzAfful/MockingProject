@@ -28,16 +28,27 @@ class RxSwiftController: UIViewController {
 		super.viewDidLoad()
 		showLoader()
 		setupTableView()
+        setupBindings()
 	}
+
+    func setupBindings() {
+        viewModel.employees.drive(onNext: {[unowned self] (_) in
+            self.showTableView()
+        }).disposed(by: disposeBag)
+
+        viewModel.errorMessage.drive(onNext: { (_message) in
+            if let message = _message {
+                self.showAlert(title: "Error", message: message)
+            }
+        }).disposed(by: disposeBag)
+    }
 
 	func setupTableView() {
 		self.tableView.register(UINib(nibName: "EmployeeCell", bundle: nil), forCellReuseIdentifier: "EmployeeCell")
 		self.tableView.dataSource = self
 		self.tableView.delegate = self
 		self.tableView.tableFooterView = UIView()
-        viewModel.employees.drive(onNext: {[unowned self] (_) in
-            self.showTableView()
-        }).disposed(by: disposeBag)
+
 		self.tableView.es.addPullToRefresh {
             self.viewModel.fetchEmployees()
 		}
@@ -59,7 +70,7 @@ class RxSwiftController: UIViewController {
 	func showTableView() {
         DispatchQueue.main.async {
             self.tableView.es.stopPullToRefresh()
-            if self.viewModel.employees.value.isEmpty {
+            if self.viewModel.numberOfEmployees == 0 {
                 self.showEmptyView()
             } else {
                 self.tableView.reloadData()

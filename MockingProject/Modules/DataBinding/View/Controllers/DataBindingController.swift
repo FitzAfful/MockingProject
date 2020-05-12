@@ -10,7 +10,7 @@ import UIKit
 import ESPullToRefresh
 import Alamofire
 
-class HomeController: UIViewController {
+class DataBindingController: UIViewController {
 
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var emptyView: UIView!

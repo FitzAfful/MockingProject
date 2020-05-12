@@ -35,7 +35,7 @@
 		84D22D522435F2BB00358B5F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D372435F2BB00358B5F /* APIManager.swift */; };
 		84D22D532435F2BB00358B5F /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D382435F2BB00358B5F /* APIRouter.swift */; };
 		84D22D542435F2BB00358B5F /* BaseNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D392435F2BB00358B5F /* BaseNetworkManager.swift */; };
-		84D22D622435F2BB00358B5F /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D492435F2BB00358B5F /* HomeController.swift */; };
+		84D22D622435F2BB00358B5F /* DataBindingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D492435F2BB00358B5F /* DataBindingController.swift */; };
 		84D22D632435F2BB00358B5F /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D4A2435F2BB00358B5F /* DetailController.swift */; };
 		84D22D652435F2BB00358B5F /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D4D2435F2BB00358B5F /* EmployeeCell.swift */; };
 		84D22D662435F2BB00358B5F /* EmployeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D22D4E2435F2BB00358B5F /* EmployeeCell.xib */; };
@@ -54,7 +54,7 @@
 		84D855A8243EC1810013E2A8 /* BaseNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D392435F2BB00358B5F /* BaseNetworkManager.swift */; };
 		84D855A9243EC1810013E2A8 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D382435F2BB00358B5F /* APIRouter.swift */; };
 		84D855AA243EC1810013E2A8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84457C2A243893D40071AD9B /* HomeViewModel.swift */; };
-		84D855AB243EC1810013E2A8 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D492435F2BB00358B5F /* HomeController.swift */; };
+		84D855AB243EC1810013E2A8 /* DataBindingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D492435F2BB00358B5F /* DataBindingController.swift */; };
 		84D855AC243EC1810013E2A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D142435EE3000358B5F /* AppDelegate.swift */; };
 		84D855AD243EC1810013E2A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D162435EE3000358B5F /* SceneDelegate.swift */; };
 		84D855AE243EC1810013E2A8 /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D4D2435F2BB00358B5F /* EmployeeCell.swift */; };
@@ -74,7 +74,7 @@
 		84D855C9243EC18B0013E2A8 /* BaseNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D392435F2BB00358B5F /* BaseNetworkManager.swift */; };
 		84D855CA243EC18B0013E2A8 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D382435F2BB00358B5F /* APIRouter.swift */; };
 		84D855CB243EC18B0013E2A8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84457C2A243893D40071AD9B /* HomeViewModel.swift */; };
-		84D855CC243EC18B0013E2A8 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D492435F2BB00358B5F /* HomeController.swift */; };
+		84D855CC243EC18B0013E2A8 /* DataBindingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D492435F2BB00358B5F /* DataBindingController.swift */; };
 		84D855CD243EC18B0013E2A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D142435EE3000358B5F /* AppDelegate.swift */; };
 		84D855CE243EC18B0013E2A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D162435EE3000358B5F /* SceneDelegate.swift */; };
 		84D855CF243EC18B0013E2A8 /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D4D2435F2BB00358B5F /* EmployeeCell.swift */; };
@@ -140,7 +140,7 @@
 		84D22D372435F2BB00358B5F /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		84D22D382435F2BB00358B5F /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		84D22D392435F2BB00358B5F /* BaseNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNetworkManager.swift; sourceTree = "<group>"; };
-		84D22D492435F2BB00358B5F /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		84D22D492435F2BB00358B5F /* DataBindingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBindingController.swift; sourceTree = "<group>"; };
 		84D22D4A2435F2BB00358B5F /* DetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		84D22D4D2435F2BB00358B5F /* EmployeeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeCell.swift; sourceTree = "<group>"; };
 		84D22D4E2435F2BB00358B5F /* EmployeeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmployeeCell.xib; sourceTree = "<group>"; };
@@ -215,6 +215,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8407D0FF244E5E3200E427A1 /* DataBinding */ = {
+			isa = PBXGroup;
+			children = (
+				84457C28243892840071AD9B /* View */,
+				84457C292438930E0071AD9B /* ViewModel */,
+			);
+			path = DataBinding;
+			sourceTree = "<group>";
+		};
+		8407D100244E5E5100E427A1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8407D101244E5E7900E427A1 /* DependencyInjection */,
+				8407D0FF244E5E3200E427A1 /* DataBinding */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		8407D101244E5E7900E427A1 /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
 		84457C25243823020071AD9B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,8 +301,7 @@
 			children = (
 				84D855DF243EC4760013E2A8 /* Helpers */,
 				84D22D3A2435F2BB00358B5F /* Model */,
-				84457C28243892840071AD9B /* View */,
-				84457C292438930E0071AD9B /* ViewModel */,
+				8407D100244E5E5100E427A1 /* Modules */,
 				84D22D362435F2BB00358B5F /* DataManager */,
 				84D22D4F2435F2BB00358B5F /* Extensions */,
 				84D22D142435EE3000358B5F /* AppDelegate.swift */,
@@ -325,7 +349,7 @@
 		84D22D482435F2BB00358B5F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				84D22D492435F2BB00358B5F /* HomeController.swift */,
+				84D22D492435F2BB00358B5F /* DataBindingController.swift */,
 				845F7880244A7CB800080A88 /* EventBusController.swift */,
 				845F787224492FE800080A88 /* ObservableController.swift */,
 				845F7882244A99B700080A88 /* RxSwiftController.swift */,
@@ -729,7 +753,7 @@
 				84D22D532435F2BB00358B5F /* APIRouter.swift in Sources */,
 				845F787F244A7B8200080A88 /* EventBusViewModel.swift in Sources */,
 				84457C2B243893D40071AD9B /* HomeViewModel.swift in Sources */,
-				84D22D622435F2BB00358B5F /* HomeController.swift in Sources */,
+				84D22D622435F2BB00358B5F /* DataBindingController.swift in Sources */,
 				84D22D152435EE3000358B5F /* AppDelegate.swift in Sources */,
 				84D22D172435EE3000358B5F /* SceneDelegate.swift in Sources */,
 				845F7885244A99E400080A88 /* RxSwiftViewModel.swift in Sources */,
@@ -764,7 +788,7 @@
 				84D855A8243EC1810013E2A8 /* BaseNetworkManager.swift in Sources */,
 				84D855A9243EC1810013E2A8 /* APIRouter.swift in Sources */,
 				84D855AA243EC1810013E2A8 /* HomeViewModel.swift in Sources */,
-				84D855AB243EC1810013E2A8 /* HomeController.swift in Sources */,
+				84D855AB243EC1810013E2A8 /* DataBindingController.swift in Sources */,
 				84D855AC243EC1810013E2A8 /* AppDelegate.swift in Sources */,
 				84D855AD243EC1810013E2A8 /* SceneDelegate.swift in Sources */,
 				84D855AE243EC1810013E2A8 /* EmployeeCell.swift in Sources */,
@@ -785,7 +809,7 @@
 				84D855C9243EC18B0013E2A8 /* BaseNetworkManager.swift in Sources */,
 				84D855CA243EC18B0013E2A8 /* APIRouter.swift in Sources */,
 				84D855CB243EC18B0013E2A8 /* HomeViewModel.swift in Sources */,
-				84D855CC243EC18B0013E2A8 /* HomeController.swift in Sources */,
+				84D855CC243EC18B0013E2A8 /* DataBindingController.swift in Sources */,
 				84D855CD243EC18B0013E2A8 /* AppDelegate.swift in Sources */,
 				84D855CE243EC18B0013E2A8 /* SceneDelegate.swift in Sources */,
 				84D855CF243EC18B0013E2A8 /* EmployeeCell.swift in Sources */,

@@ -1,6 +1,6 @@
 # Data Binding: Introduction
 
-
+Below, I explain 4 techniques you can use to implement Data Binding in your MVVM project. All techniques in the post below have their respective views and viewModels in this module of the project. You can also read the whole post on [Medium](https://medium.com/flawless-app-stories/data-binding-in-mvvm-on-ios-714eb15e3913).
 
 ## Definitions
 

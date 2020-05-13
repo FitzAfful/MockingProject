@@ -26,6 +26,10 @@
 		845F7883244A99B700080A88 /* RxSwiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F7882244A99B700080A88 /* RxSwiftController.swift */; };
 		845F7885244A99E400080A88 /* RxSwiftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F7884244A99E400080A88 /* RxSwiftViewModel.swift */; };
 		845F7887244AF4C500080A88 /* CombineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F7886244AF4C500080A88 /* CombineViewModel.swift */; };
+		8491EB4B246A5EE20024005F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8491EB4A246A5EE20024005F /* README.md */; };
+		8491EB4D246A65890024005F /* AppDelegate+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491EB4C246A65890024005F /* AppDelegate+Injection.swift */; };
+		8491EB4F246A660F0024005F /* APIManager+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491EB4E246A660F0024005F /* APIManager+Injection.swift */; };
+		8491EB51246A66E90024005F /* DepInjectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491EB50246A66E90024005F /* DepInjectionController.swift */; };
 		84D22D152435EE3000358B5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D142435EE3000358B5F /* AppDelegate.swift */; };
 		84D22D172435EE3000358B5F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D162435EE3000358B5F /* SceneDelegate.swift */; };
 		84D22D1C2435EE3000358B5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D22D1A2435EE3000358B5F /* Main.storyboard */; };
@@ -127,6 +131,10 @@
 		845F7882244A99B700080A88 /* RxSwiftController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSwiftController.swift; sourceTree = "<group>"; };
 		845F7884244A99E400080A88 /* RxSwiftViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSwiftViewModel.swift; sourceTree = "<group>"; };
 		845F7886244AF4C500080A88 /* CombineViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineViewModel.swift; sourceTree = "<group>"; };
+		8491EB4A246A5EE20024005F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8491EB4C246A65890024005F /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
+		8491EB4E246A660F0024005F /* APIManager+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+Injection.swift"; sourceTree = "<group>"; };
+		8491EB50246A66E90024005F /* DepInjectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepInjectionController.swift; sourceTree = "<group>"; };
 		84D22D112435EE3000358B5F /* Development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Development.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D22D142435EE3000358B5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84D22D162435EE3000358B5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,6 +228,7 @@
 			children = (
 				84457C28243892840071AD9B /* View */,
 				84457C292438930E0071AD9B /* ViewModel */,
+				8491EB4A246A5EE20024005F /* README.md */,
 			);
 			path = DataBinding;
 			sourceTree = "<group>";
@@ -227,6 +236,7 @@
 		8407D100244E5E5100E427A1 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84A45803246B7FD800A01CA0 /* GraphQL */,
 				8407D101244E5E7900E427A1 /* DependencyInjection */,
 				8407D0FF244E5E3200E427A1 /* DataBinding */,
 			);
@@ -236,6 +246,8 @@
 		8407D101244E5E7900E427A1 /* DependencyInjection */ = {
 			isa = PBXGroup;
 			children = (
+				8491EB4C246A65890024005F /* AppDelegate+Injection.swift */,
+				8491EB50246A66E90024005F /* DepInjectionController.swift */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -269,6 +281,13 @@
 				845F7884244A99E400080A88 /* RxSwiftViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84A45803246B7FD800A01CA0 /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GraphQL;
 			sourceTree = "<group>";
 		};
 		84D22D082435EE3000358B5F = {
@@ -331,6 +350,7 @@
 				84D22D372435F2BB00358B5F /* APIManager.swift */,
 				84D22D382435F2BB00358B5F /* APIRouter.swift */,
 				84D22D392435F2BB00358B5F /* BaseNetworkManager.swift */,
+				8491EB4E246A660F0024005F /* APIManager+Injection.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -526,6 +546,7 @@
 				84D22D212435EE3300358B5F /* LaunchScreen.storyboard in Resources */,
 				84D22D1E2435EE3300358B5F /* Assets.xcassets in Resources */,
 				84D22D1C2435EE3000358B5F /* Main.storyboard in Resources */,
+				8491EB4B246A5EE20024005F /* README.md in Resources */,
 				84457C2024381F0F0071AD9B /* employees.json in Resources */,
 				84D22D662435F2BB00358B5F /* EmployeeCell.xib in Resources */,
 				84457C2224381F0F0071AD9B /* employee24.json in Resources */,
@@ -737,13 +758,16 @@
 			files = (
 				845F7879244A65E500080A88 /* Observable.swift in Sources */,
 				845F787B244A7A9D00080A88 /* EventBus.swift in Sources */,
+				8491EB51246A66E90024005F /* DepInjectionController.swift in Sources */,
 				84D22D522435F2BB00358B5F /* APIManager.swift in Sources */,
 				845F787324492FE800080A88 /* ObservableController.swift in Sources */,
 				84D22D6D243631C300358B5F /* Employee.swift in Sources */,
 				84D22D632435F2BB00358B5F /* DetailController.swift in Sources */,
 				84D22D682435F2BB00358B5F /* ThirdPartyExtensions.swift in Sources */,
 				84D22D672435F2BB00358B5F /* UIViewController+Extensions.swift in Sources */,
+				8491EB4F246A660F0024005F /* APIManager+Injection.swift in Sources */,
 				845F7887244AF4C500080A88 /* CombineViewModel.swift in Sources */,
+				8491EB4D246A65890024005F /* AppDelegate+Injection.swift in Sources */,
 				84FA9B04244881A1003A84C4 /* CobineController.swift in Sources */,
 				84D22D6E243631C300358B5F /* EmployeeResponse.swift in Sources */,
 				84D855E1243EC4850013E2A8 /* EnvironmentHelper.swift in Sources */,

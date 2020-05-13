@@ -9,8 +9,9 @@
 import UIKit
 import ESPullToRefresh
 import Alamofire
+import Resolver
 
-class DataBindingController: UIViewController {
+class DepInjectionController: UIViewController, Resolving {
 
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var emptyView: UIView!
@@ -86,14 +87,14 @@ class DataBindingController: UIViewController {
 
 }
 
-extension DataBindingController: UITableViewDelegate {
+extension DepInjectionController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = self.viewModel.employees[indexPath.row]
 		self.moveToDetails(item: item)
 	}
 }
 
-extension DataBindingController: UITableViewDataSource {
+extension DepInjectionController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return self.viewModel.employees.count
 	}

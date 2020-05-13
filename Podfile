@@ -16,6 +16,7 @@ target 'Development' do
     pod 'SwiftLint'
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod "Apollo"
 
     target 'MockingProjectTests' do
         inherit! :search_paths

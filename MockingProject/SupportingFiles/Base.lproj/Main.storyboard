@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="37n-Rz-DGi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f0n-RF-hEn">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -362,6 +362,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KE3-pT-aKd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2551" y="820"/>
+        </scene>
+        <!--RxSwiftController-->
+        <scene sceneID="rJ7-ub-KCm">
+            <objects>
+                <viewController storyboardIdentifier="SwinjectController" id="f0n-RF-hEn" customClass="SwinjectController" customModule="Development" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RLv-Vd-3II">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fhK-9N-85Q">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ur0-Gh-L5P">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="URk-q7-uw6">
+                                <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
+                                <color key="color" red="0.1333333333" green="0.30588235289999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XHP-lD-T8t" firstAttribute="trailing" secondItem="fhK-9N-85Q" secondAttribute="trailing" id="Bhy-2z-w5P"/>
+                            <constraint firstItem="XHP-lD-T8t" firstAttribute="bottom" secondItem="fhK-9N-85Q" secondAttribute="bottom" id="JrR-sV-Y7A"/>
+                            <constraint firstItem="XHP-lD-T8t" firstAttribute="trailing" secondItem="ur0-Gh-L5P" secondAttribute="trailing" id="KQ8-2k-79e"/>
+                            <constraint firstItem="fhK-9N-85Q" firstAttribute="leading" secondItem="XHP-lD-T8t" secondAttribute="leading" id="aj5-4m-B6u"/>
+                            <constraint firstItem="ur0-Gh-L5P" firstAttribute="top" secondItem="XHP-lD-T8t" secondAttribute="top" id="ewq-rl-aUM"/>
+                            <constraint firstItem="XHP-lD-T8t" firstAttribute="bottom" secondItem="ur0-Gh-L5P" secondAttribute="bottom" id="fsO-6s-Lhg"/>
+                            <constraint firstItem="URk-q7-uw6" firstAttribute="centerY" secondItem="XHP-lD-T8t" secondAttribute="centerY" id="hMf-7H-juX"/>
+                            <constraint firstItem="URk-q7-uw6" firstAttribute="centerX" secondItem="XHP-lD-T8t" secondAttribute="centerX" id="oIv-yA-vIu"/>
+                            <constraint firstItem="ur0-Gh-L5P" firstAttribute="leading" secondItem="XHP-lD-T8t" secondAttribute="leading" id="q5e-sg-Zre"/>
+                            <constraint firstItem="fhK-9N-85Q" firstAttribute="top" secondItem="XHP-lD-T8t" secondAttribute="top" id="uzJ-yy-zT9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XHP-lD-T8t"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="RxSwiftController" id="yfe-aC-HG1"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="URk-q7-uw6" id="AkV-9g-9Zd"/>
+                        <outlet property="emptyView" destination="ur0-Gh-L5P" id="sFL-XN-fUD"/>
+                        <outlet property="tableView" destination="fhK-9N-85Q" id="roi-WF-4PQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jcg-Ny-99Z" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="61" y="820"/>
         </scene>
     </scenes>
     <resources>

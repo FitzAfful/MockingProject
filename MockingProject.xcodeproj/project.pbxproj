@@ -30,6 +30,9 @@
 		8469915A2475E7420043D045 /* DI-README.md in Resources */ = {isa = PBXBuildFile; fileRef = 846991592475E7420043D045 /* DI-README.md */; };
 		8469915E24760D940043D045 /* DIServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469915D24760D940043D045 /* DIServiceLocator.swift */; };
 		84699161247611FE0043D045 /* SwinjectContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84699160247611FE0043D045 /* SwinjectContainer.swift */; };
+		846991632476138D0043D045 /* SwinjectStoryboardContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846991622476138D0043D045 /* SwinjectStoryboardContainer.swift */; };
+		84699165247614330043D045 /* SwinjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84699164247614330043D045 /* SwinjectController.swift */; };
+		84699167247614E50043D045 /* SwinjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84699166247614E50043D045 /* SwinjectViewModel.swift */; };
 		8491EB4B246A5EE20024005F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8491EB4A246A5EE20024005F /* README.md */; };
 		8491EB4D246A65890024005F /* AppDelegate+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491EB4C246A65890024005F /* AppDelegate+Injection.swift */; };
 		8491EB4F246A660F0024005F /* APIManager+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491EB4E246A660F0024005F /* APIManager+Injection.swift */; };
@@ -138,6 +141,9 @@
 		846991592475E7420043D045 /* DI-README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "DI-README.md"; sourceTree = "<group>"; };
 		8469915D24760D940043D045 /* DIServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIServiceLocator.swift; sourceTree = "<group>"; };
 		84699160247611FE0043D045 /* SwinjectContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectContainer.swift; sourceTree = "<group>"; };
+		846991622476138D0043D045 /* SwinjectStoryboardContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectStoryboardContainer.swift; sourceTree = "<group>"; };
+		84699164247614330043D045 /* SwinjectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwinjectController.swift; sourceTree = "<group>"; };
+		84699166247614E50043D045 /* SwinjectViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwinjectViewModel.swift; sourceTree = "<group>"; };
 		8491EB4A246A5EE20024005F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8491EB4C246A65890024005F /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
 		8491EB4E246A660F0024005F /* APIManager+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+Injection.swift"; sourceTree = "<group>"; };
@@ -295,6 +301,7 @@
 		846991542475E4A80043D045 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				84699166247614E50043D045 /* SwinjectViewModel.swift */,
 				846991552475E4BA0043D045 /* DIViewModel.swift */,
 			);
 			path = ViewModel;
@@ -303,6 +310,7 @@
 		8469915B2475E92D0043D045 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				84699164247614330043D045 /* SwinjectController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -325,6 +333,7 @@
 			children = (
 				8469915D24760D940043D045 /* DIServiceLocator.swift */,
 				84699160247611FE0043D045 /* SwinjectContainer.swift */,
+				846991622476138D0043D045 /* SwinjectStoryboardContainer.swift */,
 			);
 			path = DIHelpers;
 			sourceTree = "<group>";
@@ -837,17 +846,20 @@
 				845F787B244A7A9D00080A88 /* EventBus.swift in Sources */,
 				8491EB51246A66E90024005F /* DIController.swift in Sources */,
 				84D22D522435F2BB00358B5F /* APIManager.swift in Sources */,
+				846991632476138D0043D045 /* SwinjectStoryboardContainer.swift in Sources */,
 				845F787324492FE800080A88 /* ObservableController.swift in Sources */,
 				84D22D6D243631C300358B5F /* Employee.swift in Sources */,
 				84D22D632435F2BB00358B5F /* DetailController.swift in Sources */,
 				84D22D682435F2BB00358B5F /* ThirdPartyExtensions.swift in Sources */,
 				84D22D672435F2BB00358B5F /* UIViewController+Extensions.swift in Sources */,
 				8491EB4F246A660F0024005F /* APIManager+Injection.swift in Sources */,
+				84699167247614E50043D045 /* SwinjectViewModel.swift in Sources */,
 				845F7887244AF4C500080A88 /* CombineViewModel.swift in Sources */,
 				8491EB4D246A65890024005F /* AppDelegate+Injection.swift in Sources */,
 				84FA9B04244881A1003A84C4 /* CobineController.swift in Sources */,
 				84D22D6E243631C300358B5F /* EmployeeResponse.swift in Sources */,
 				84D855E1243EC4850013E2A8 /* EnvironmentHelper.swift in Sources */,
+				84699165247614330043D045 /* SwinjectController.swift in Sources */,
 				84D22D6C243631C300358B5F /* EmployeesResponse.swift in Sources */,
 				84D22D542435F2BB00358B5F /* BaseNetworkManager.swift in Sources */,
 				845F7883244A99B700080A88 /* RxSwiftController.swift in Sources */,

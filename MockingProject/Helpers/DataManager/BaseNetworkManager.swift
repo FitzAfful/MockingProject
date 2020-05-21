@@ -64,7 +64,7 @@ extension Encodable {
 }
 
 struct NetworkingConstants {
-	static let baseUrl = "https://restapiexample.com/api/v1/"
+	static let baseUrl = "http://dummy.restapiexample.com/api/v1/"
 	static let networkErrorMessage = "Please check your internet connection and try again."
 }
 

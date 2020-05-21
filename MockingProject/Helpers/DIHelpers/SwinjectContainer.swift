@@ -11,19 +11,18 @@ import Swinject
 
 class SwinjectContainer {
 
-    // 1
     static let sharedContainer = SwinjectContainer()
-
-    // 2
     let container = Container()
 
     private init() {
         setupDefaultContainers()
     }
 
-    // 3
     private func setupDefaultContainers() {
-
         container.register(APIManager.self, factory: { _ in APIManager() })
+
+        container.register(HomeViewModelProtocol.self, factory: { resolver in
+            return SwinjectViewModel(manager: resolver.resolve(APIManager.self)!)
+        })
     }
 }

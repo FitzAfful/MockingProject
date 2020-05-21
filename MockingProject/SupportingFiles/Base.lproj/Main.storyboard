@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3yt-WO-xkr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c5o-jf-DrV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -314,7 +314,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Wy-Wt-QoN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1741" y="820"/>
+            <point key="canvasLocation" x="2551" y="820"/>
         </scene>
         <!--CombineController-->
         <scene sceneID="Tcc-ap-5cl">
@@ -361,7 +361,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KE3-pT-aKd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2551" y="820"/>
+            <point key="canvasLocation" x="3303" y="820"/>
         </scene>
         <!--RxSwiftController-->
         <scene sceneID="rJ7-ub-KCm">
@@ -455,7 +455,54 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kt7-gX-BdL" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="870" y="820"/>
+            <point key="canvasLocation" x="1741" y="820"/>
+        </scene>
+        <!--RxSwiftController-->
+        <scene sceneID="gyV-Xe-TYv">
+            <objects>
+                <viewController storyboardIdentifier="ResolverController" id="c5o-jf-DrV" customClass="ResolverController" customModule="Development" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Sm-GC-upo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OFs-ym-B2j">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gm7-Po-v5r">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="oq0-JY-p6U">
+                                <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
+                                <color key="color" red="0.1333333333" green="0.30588235289999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oq0-JY-p6U" firstAttribute="centerY" secondItem="mq3-CD-n35" secondAttribute="centerY" id="Ak8-vo-rON"/>
+                            <constraint firstItem="Gm7-Po-v5r" firstAttribute="top" secondItem="mq3-CD-n35" secondAttribute="top" id="GaR-R2-yEd"/>
+                            <constraint firstItem="mq3-CD-n35" firstAttribute="bottom" secondItem="OFs-ym-B2j" secondAttribute="bottom" id="Jwv-Lb-Gke"/>
+                            <constraint firstItem="Gm7-Po-v5r" firstAttribute="leading" secondItem="mq3-CD-n35" secondAttribute="leading" id="Pyt-J8-rYd"/>
+                            <constraint firstItem="OFs-ym-B2j" firstAttribute="top" secondItem="mq3-CD-n35" secondAttribute="top" id="UnD-dh-Wbs"/>
+                            <constraint firstItem="OFs-ym-B2j" firstAttribute="leading" secondItem="mq3-CD-n35" secondAttribute="leading" id="WQ1-9E-Zpw"/>
+                            <constraint firstItem="mq3-CD-n35" firstAttribute="trailing" secondItem="Gm7-Po-v5r" secondAttribute="trailing" id="aRb-jf-lw4"/>
+                            <constraint firstItem="oq0-JY-p6U" firstAttribute="centerX" secondItem="mq3-CD-n35" secondAttribute="centerX" id="kWa-ez-nd5"/>
+                            <constraint firstItem="mq3-CD-n35" firstAttribute="trailing" secondItem="OFs-ym-B2j" secondAttribute="trailing" id="pdc-YD-mLI"/>
+                            <constraint firstItem="mq3-CD-n35" firstAttribute="bottom" secondItem="Gm7-Po-v5r" secondAttribute="bottom" id="y8W-PD-sFB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mq3-CD-n35"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="RxSwiftController" id="fFd-9b-l0z"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="oq0-JY-p6U" id="Q8N-Pt-DON"/>
+                        <outlet property="emptyView" destination="Gm7-Po-v5r" id="0d1-mK-zJX"/>
+                        <outlet property="tableView" destination="OFs-ym-B2j" id="ckF-Xt-ugr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u4y-C5-cEW" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="903" y="820"/>
         </scene>
     </scenes>
     <resources>

@@ -263,7 +263,6 @@
 				8469915B2475E92D0043D045 /* Controllers */,
 				846991542475E4A80043D045 /* ViewModel */,
 				846991592475E7420043D045 /* DI-README.md */,
-				8491EB4C246A65890024005F /* AppDelegate+Injection.swift */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -337,6 +336,7 @@
 				8469915D24760D940043D045 /* ServiceLocator.swift */,
 				84699160247611FE0043D045 /* SwinjectContainer.swift */,
 				846991622476138D0043D045 /* SwinjectStoryboardContainer.swift */,
+				8491EB4C246A65890024005F /* AppDelegate+Injection.swift */,
 			);
 			path = DIHelpers;
 			sourceTree = "<group>";

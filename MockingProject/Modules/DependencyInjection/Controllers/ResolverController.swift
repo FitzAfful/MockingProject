@@ -11,13 +11,13 @@ import ESPullToRefresh
 import Alamofire
 import Resolver
 
-class Resolver: UIViewController, Resolving {
+class ResolverController: UIViewController, Resolving {
 
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var emptyView: UIView!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-    private var viewModel: HomeViewModel! //= Resolver.resolve()
+    private var viewModel: HomeViewModel = Resolver.resolve()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -84,14 +84,14 @@ class Resolver: UIViewController, Resolving {
 
 }
 
-extension Resolver: UITableViewDelegate {
+extension ResolverController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = self.viewModel.employees[indexPath.row]
 		self.moveToDetails(item: item)
 	}
 }
 
-extension Resolver: UITableViewDataSource {
+extension ResolverController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return self.viewModel.employees.count
 	}

@@ -13,4 +13,8 @@ extension Resolver {
     public static func registerAPIManager() {
         register { APIManager() }
     }
+
+    public static func registerViewModel() {
+        register { HomeViewModel(manager: Resolver.resolve()) }
+    }
 }

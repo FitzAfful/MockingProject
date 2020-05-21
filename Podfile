@@ -19,10 +19,10 @@ target 'Development' do
     pod 'Mocker'
 
     #Dependency Injection
-    pod 'Resolver'
     pod 'Swinject'
     pod 'SwinjectAutoregistration'
     pod 'SwinjectStoryboard'
+    pod 'Resolver'
 
 
     #Reactive / Functional Programming

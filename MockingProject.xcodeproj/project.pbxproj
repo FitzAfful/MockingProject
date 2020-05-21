@@ -26,10 +26,13 @@
 		845F7883244A99B700080A88 /* RxSwiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F7882244A99B700080A88 /* RxSwiftController.swift */; };
 		845F7885244A99E400080A88 /* RxSwiftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F7884244A99E400080A88 /* RxSwiftViewModel.swift */; };
 		845F7887244AF4C500080A88 /* CombineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F7886244AF4C500080A88 /* CombineViewModel.swift */; };
+		846991562475E4BA0043D045 /* DIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846991552475E4BA0043D045 /* DIViewModel.swift */; };
+		8469915A2475E7420043D045 /* DI-README.md in Resources */ = {isa = PBXBuildFile; fileRef = 846991592475E7420043D045 /* DI-README.md */; };
+		8469915E24760D940043D045 /* DIServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469915D24760D940043D045 /* DIServiceLocator.swift */; };
 		8491EB4B246A5EE20024005F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8491EB4A246A5EE20024005F /* README.md */; };
 		8491EB4D246A65890024005F /* AppDelegate+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491EB4C246A65890024005F /* AppDelegate+Injection.swift */; };
 		8491EB4F246A660F0024005F /* APIManager+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491EB4E246A660F0024005F /* APIManager+Injection.swift */; };
-		8491EB51246A66E90024005F /* DepInjectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491EB50246A66E90024005F /* DepInjectionController.swift */; };
+		8491EB51246A66E90024005F /* DIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491EB50246A66E90024005F /* DIController.swift */; };
 		84D22D152435EE3000358B5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D142435EE3000358B5F /* AppDelegate.swift */; };
 		84D22D172435EE3000358B5F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22D162435EE3000358B5F /* SceneDelegate.swift */; };
 		84D22D1C2435EE3000358B5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D22D1A2435EE3000358B5F /* Main.storyboard */; };
@@ -89,7 +92,6 @@
 		84D855D7243EC18B0013E2A8 /* EmployeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D22D4E2435F2BB00358B5F /* EmployeeCell.xib */; };
 		84D855D8243EC18B0013E2A8 /* employee24.json in Resources */ = {isa = PBXBuildFile; fileRef = 84457C1F24381F0F0071AD9B /* employee24.json */; };
 		84D855E1243EC4850013E2A8 /* EnvironmentHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D855E0243EC4850013E2A8 /* EnvironmentHelper.swift */; };
-		84D855E3243EC8490013E2A8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D855E2243EC8490013E2A8 /* Default-568h@2x.png */; };
 		84FA9B04244881A1003A84C4 /* CobineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA9B03244881A1003A84C4 /* CobineController.swift */; };
 		B3D4925ED4F7AA4DFC87AC70 /* Pods_MockingProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822D0DD9187C8EF145275F2A /* Pods_MockingProjectTests.framework */; };
 		E82470E0279613B52B880F96 /* Pods_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57861F4DCB2A55A2B6D26BFF /* Pods_Test.framework */; };
@@ -131,10 +133,13 @@
 		845F7882244A99B700080A88 /* RxSwiftController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSwiftController.swift; sourceTree = "<group>"; };
 		845F7884244A99E400080A88 /* RxSwiftViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSwiftViewModel.swift; sourceTree = "<group>"; };
 		845F7886244AF4C500080A88 /* CombineViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineViewModel.swift; sourceTree = "<group>"; };
+		846991552475E4BA0043D045 /* DIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIViewModel.swift; sourceTree = "<group>"; };
+		846991592475E7420043D045 /* DI-README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "DI-README.md"; sourceTree = "<group>"; };
+		8469915D24760D940043D045 /* DIServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIServiceLocator.swift; sourceTree = "<group>"; };
 		8491EB4A246A5EE20024005F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8491EB4C246A65890024005F /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
 		8491EB4E246A660F0024005F /* APIManager+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+Injection.swift"; sourceTree = "<group>"; };
-		8491EB50246A66E90024005F /* DepInjectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepInjectionController.swift; sourceTree = "<group>"; };
+		8491EB50246A66E90024005F /* DIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIController.swift; sourceTree = "<group>"; };
 		84D22D112435EE3000358B5F /* Development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Development.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D22D142435EE3000358B5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84D22D162435EE3000358B5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,7 +167,6 @@
 		84D855DD243EC18B0013E2A8 /* Production.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Production.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D855DE243EC18B0013E2A8 /* Production-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Production-Info.plist"; path = "/Users/paaquesiafful/iOS Projects/MockingProject/Production-Info.plist"; sourceTree = "<absolute>"; };
 		84D855E0243EC4850013E2A8 /* EnvironmentHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentHelper.swift; sourceTree = "<group>"; };
-		84D855E2243EC8490013E2A8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		84FA9B03244881A1003A84C4 /* CobineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CobineController.swift; sourceTree = "<group>"; };
 		A51E6B3C973B825E9139D476 /* Pods_Development.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Development.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC5B2E3B90BB2A19E9730A6B /* Pods-MockingProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MockingProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-MockingProjectTests/Pods-MockingProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -246,8 +250,11 @@
 		8407D101244E5E7900E427A1 /* DependencyInjection */ = {
 			isa = PBXGroup;
 			children = (
+				8469915B2475E92D0043D045 /* Controllers */,
+				846991542475E4A80043D045 /* ViewModel */,
+				846991592475E7420043D045 /* DI-README.md */,
 				8491EB4C246A65890024005F /* AppDelegate+Injection.swift */,
-				8491EB50246A66E90024005F /* DepInjectionController.swift */,
+				8491EB50246A66E90024005F /* DIController.swift */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -283,6 +290,34 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		846991542475E4A80043D045 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				846991552475E4BA0043D045 /* DIViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8469915B2475E92D0043D045 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8469915C2475EA3C0043D045 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				84D22D142435EE3000358B5F /* AppDelegate.swift */,
+				84D22D162435EE3000358B5F /* SceneDelegate.swift */,
+				84D22D1A2435EE3000358B5F /* Main.storyboard */,
+				84D22D1D2435EE3300358B5F /* Assets.xcassets */,
+				84D22D1F2435EE3300358B5F /* LaunchScreen.storyboard */,
+				84D22D222435EE3300358B5F /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		84A45803246B7FD800A01CA0 /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,7 +328,6 @@
 		84D22D082435EE3000358B5F = {
 			isa = PBXGroup;
 			children = (
-				84D855E2243EC8490013E2A8 /* Default-568h@2x.png */,
 				84D22D132435EE3000358B5F /* MockingProject */,
 				84D22D2A2435EE3300358B5F /* MockingProjectTests */,
 				84D22D122435EE3000358B5F /* Products */,
@@ -319,16 +353,9 @@
 			isa = PBXGroup;
 			children = (
 				84D855DF243EC4760013E2A8 /* Helpers */,
-				84D22D3A2435F2BB00358B5F /* Model */,
 				8407D100244E5E5100E427A1 /* Modules */,
-				84D22D362435F2BB00358B5F /* DataManager */,
 				84D22D4F2435F2BB00358B5F /* Extensions */,
-				84D22D142435EE3000358B5F /* AppDelegate.swift */,
-				84D22D162435EE3000358B5F /* SceneDelegate.swift */,
-				84D22D1A2435EE3000358B5F /* Main.storyboard */,
-				84D22D1D2435EE3300358B5F /* Assets.xcassets */,
-				84D22D1F2435EE3300358B5F /* LaunchScreen.storyboard */,
-				84D22D222435EE3300358B5F /* Info.plist */,
+				8469915C2475EA3C0043D045 /* SupportingFiles */,
 			);
 			path = MockingProject;
 			sourceTree = "<group>";
@@ -347,6 +374,7 @@
 		84D22D362435F2BB00358B5F /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				84D22D3A2435F2BB00358B5F /* Model */,
 				84D22D372435F2BB00358B5F /* APIManager.swift */,
 				84D22D382435F2BB00358B5F /* APIRouter.swift */,
 				84D22D392435F2BB00358B5F /* BaseNetworkManager.swift */,
@@ -400,9 +428,11 @@
 		84D855DF243EC4760013E2A8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				84D22D362435F2BB00358B5F /* DataManager */,
 				84D855E0243EC4850013E2A8 /* EnvironmentHelper.swift */,
 				845F7878244A65E500080A88 /* Observable.swift */,
 				845F787A244A7A9D00080A88 /* EventBus.swift */,
+				8469915D24760D940043D045 /* DIServiceLocator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -449,6 +479,8 @@
 				84D22D232435EE3300358B5F /* Sources */,
 				84D22D242435EE3300358B5F /* Frameworks */,
 				84D22D252435EE3300358B5F /* Resources */,
+				84A45804246B80D500A01CA0 /* ShellScript */,
+				84A45805246B8B5E00A01CA0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -543,6 +575,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8469915A2475E7420043D045 /* DI-README.md in Resources */,
 				84D22D212435EE3300358B5F /* LaunchScreen.storyboard in Resources */,
 				84D22D1E2435EE3300358B5F /* Assets.xcassets in Resources */,
 				84D22D1C2435EE3000358B5F /* Main.storyboard in Resources */,
@@ -584,7 +617,6 @@
 				84D855D5243EC18B0013E2A8 /* Main.storyboard in Resources */,
 				84D855D6243EC18B0013E2A8 /* employees.json in Resources */,
 				84D855D7243EC18B0013E2A8 /* EmployeeCell.xib in Resources */,
-				84D855E3243EC8490013E2A8 /* Default-568h@2x.png in Resources */,
 				84D855D8243EC18B0013E2A8 /* employee24.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -705,6 +737,40 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
+		84A45804246B80D500A01CA0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nSCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=http://localhost:8080/graphql schema.json\n";
+		};
+		84A45805246B8B5E00A01CA0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nAPOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema schema.json --output API.swift\n";
+		};
 		84D8559E243EC1810013E2A8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -758,7 +824,7 @@
 			files = (
 				845F7879244A65E500080A88 /* Observable.swift in Sources */,
 				845F787B244A7A9D00080A88 /* EventBus.swift in Sources */,
-				8491EB51246A66E90024005F /* DepInjectionController.swift in Sources */,
+				8491EB51246A66E90024005F /* DIController.swift in Sources */,
 				84D22D522435F2BB00358B5F /* APIManager.swift in Sources */,
 				845F787324492FE800080A88 /* ObservableController.swift in Sources */,
 				84D22D6D243631C300358B5F /* Employee.swift in Sources */,
@@ -780,10 +846,12 @@
 				84D22D622435F2BB00358B5F /* DataBindingController.swift in Sources */,
 				84D22D152435EE3000358B5F /* AppDelegate.swift in Sources */,
 				84D22D172435EE3000358B5F /* SceneDelegate.swift in Sources */,
+				846991562475E4BA0043D045 /* DIViewModel.swift in Sources */,
 				845F7885244A99E400080A88 /* RxSwiftViewModel.swift in Sources */,
 				84D22D652435F2BB00358B5F /* EmployeeCell.swift in Sources */,
 				845F787D244A7AF400080A88 /* EmployeesEvent.swift in Sources */,
 				845F7881244A7CB800080A88 /* EventBusController.swift in Sources */,
+				8469915E24760D940043D045 /* DIServiceLocator.swift in Sources */,
 				845F78752449385700080A88 /* ObservableViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -992,7 +1060,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 97XB8J435J;
-				INFOPLIST_FILE = MockingProject/Info.plist;
+				INFOPLIST_FILE = MockingProject/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1013,7 +1082,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 97XB8J435J;
-				INFOPLIST_FILE = MockingProject/Info.plist;
+				INFOPLIST_FILE = MockingProject/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

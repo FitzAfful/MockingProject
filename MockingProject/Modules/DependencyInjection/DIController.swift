@@ -11,16 +11,13 @@ import ESPullToRefresh
 import Alamofire
 import Resolver
 
-class DepInjectionController: UIViewController, Resolving {
+class DIController: UIViewController, Resolving {
 
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var emptyView: UIView!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-    lazy var viewModel: HomeViewModel = {
-        let viewModel = HomeViewModel()
-        return viewModel
-    }()
+    private var viewModel: HomeViewModel = Resolver.resolve()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -87,14 +84,14 @@ class DepInjectionController: UIViewController, Resolving {
 
 }
 
-extension DepInjectionController: UITableViewDelegate {
+extension DIController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = self.viewModel.employees[indexPath.row]
 		self.moveToDetails(item: item)
 	}
 }
 
-extension DepInjectionController: UITableViewDataSource {
+extension DIController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return self.viewModel.employees.count
 	}

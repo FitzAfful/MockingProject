@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (5.0.5)
+  - Apollo (0.27.1):
+    - Apollo/Core (= 0.27.1)
+  - Apollo/Core (0.27.1)
   - AppCenter (3.1.0):
     - AppCenter/Analytics (= 3.1.0)
     - AppCenter/Crashes (= 3.1.0)
@@ -34,6 +37,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Apollo
   - AppCenter
   - ESPullToRefresh
   - FTIndicator
@@ -50,6 +54,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - Apollo
     - AppCenter
     - ESPullToRefresh
     - FTIndicator
@@ -66,6 +71,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  Apollo: e5c057c155bf28bcfbf928e0d69e3ce643f1a1c6
   AppCenter: a1c30c47b7882a04a615ffa5ab26c007326436d8
   ESPullToRefresh: efed00d52597065e9a84e1e52fa444fdb1a1dee0
   FTIndicator: f7f071fd159e5befa1d040a9ef2e3ab53fa9322c
@@ -80,6 +86,6 @@ SPEC CHECKSUMS:
   RxTest: 711632d5644dffbeb62c936a521b5b008a1e1faa
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
 
-PODFILE CHECKSUM: 72c4296549fe2e32e84aa39a5e5c29a067fe6b17
+PODFILE CHECKSUM: 705d4896f06c59a6847b59af55da3d0888348819
 
 COCOAPODS: 1.8.4

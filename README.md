@@ -1,5 +1,7 @@
 # MockingProject
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1e4b5be3374b4633b73864f82deae55c)](https://app.codacy.com/manual/fitzafful/MockingProject?utm_source=github.com&utm_medium=referral&utm_content=FitzAfful/MockingProject&utm_campaign=Badge_Grade_Dashboard)
+
 ![Build Status](https://build.appcenter.ms/v0.1/apps/d53174af-00c0-42be-bdb8-d6ed8916fc9d/branches/development/badge)
 
 A little project to refresh my memory on old stuff I forgot about and new stuff I'm learning. I comment parts I think will be difficult to understand.

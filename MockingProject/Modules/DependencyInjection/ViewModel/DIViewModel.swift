@@ -8,15 +8,18 @@
 
 import Foundation
 import Alamofire
-import Resolver
 
-class DIViewModel: HomeViewModelProtocol, Resolving {
+class ResolverViewModel: HomeViewModelProtocol {
 
+    var apiManager: APIManager!
     var employees: [Employee] = []
 
+    init(manager: APIManager) {
+        self.apiManager = manager
+    }
+
     func fetchEmployees(completion: @escaping ([Employee]?, String?) -> Void) {
-        guard let apiManager: APIManager = Resolver.resolve() else { return }
-        apiManager.getEmployees { (result: DataResponse<EmployeesResponse, AFError>) in
+        apiManager!.getEmployees { (result: DataResponse<EmployeesResponse, AFError>) in
             switch result.result {
             case .success(let response):
                 if response.status == "success" {

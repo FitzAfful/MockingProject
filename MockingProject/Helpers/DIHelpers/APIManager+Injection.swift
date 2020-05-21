@@ -15,6 +15,6 @@ extension Resolver {
     }
 
     public static func registerViewModel() {
-        register { HomeViewModel(manager: Resolver.resolve()) }
+        register { ResolverViewModel(manager: self.resolve()) }
     }
 }

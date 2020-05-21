@@ -17,7 +17,7 @@ class ResolverController: UIViewController, Resolving {
 	@IBOutlet weak var emptyView: UIView!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-    private var viewModel: HomeViewModel = Resolver.resolve()
+    private var viewModel: ResolverViewModel = Resolver.resolve()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()

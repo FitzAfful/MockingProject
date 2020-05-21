@@ -337,6 +337,7 @@
 				84699160247611FE0043D045 /* SwinjectContainer.swift */,
 				846991622476138D0043D045 /* SwinjectStoryboardContainer.swift */,
 				8491EB4C246A65890024005F /* AppDelegate+Injection.swift */,
+				8491EB4E246A660F0024005F /* APIManager+Injection.swift */,
 			);
 			path = DIHelpers;
 			sourceTree = "<group>";
@@ -401,7 +402,6 @@
 				84D22D372435F2BB00358B5F /* APIManager.swift */,
 				84D22D382435F2BB00358B5F /* APIRouter.swift */,
 				84D22D392435F2BB00358B5F /* BaseNetworkManager.swift */,
-				8491EB4E246A660F0024005F /* APIManager+Injection.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";

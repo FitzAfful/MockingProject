@@ -1,5 +1,4 @@
 //
-//  HomeViewModel.swift
 //  MockingProject
 //
 //  Created by Fitzgerald Afful on 04/04/2020.
@@ -8,21 +7,14 @@
 
 import Foundation
 import Alamofire
+import Combine
 
-protocol ObservableViewModelProtocol {
-    func fetchEmployees()
-    func setError(_ message: String)
-    var employees: Observable<[Employee]> { get  set } //1
-    var errorMessage: Observable<String?> { get set }
-    var error: Observable<Bool> { get set }
-}
-
-class ObservableViewModel: ObservableViewModelProtocol {
-    var errorMessage: Observable<String?> = Observable(nil)
-    var error: Observable<Bool> = Observable(false)
+class CombineViewModel: ObservableObject {
+    var errorMessage: String?
+    var error: Bool = false
 
     var apiManager: APIManager?
-    var employees: Observable<[Employee]> = Observable([]) //2
+    @Published var employees: [Employee] = []
 
     init(manager: APIManager = APIManager()) {
         self.apiManager = manager
@@ -37,10 +29,10 @@ class ObservableViewModel: ObservableViewModelProtocol {
             switch result.result {
             case .success(let response):
                 if response.status == "success" {
-                    self.employees.value = response.data //3
-                    return
+                    self.employees = response.data
+                } else {
+                    self.setError(BaseNetworkManager().getErrorMessage(response: result))
                 }
-                self.setError(BaseNetworkManager().getErrorMessage(response: result))
             case .failure:
                 self.setError(BaseNetworkManager().getErrorMessage(response: result))
             }
@@ -48,8 +40,8 @@ class ObservableViewModel: ObservableViewModelProtocol {
     }
 
     func setError(_ message: String) {
-        self.errorMessage.value = message
-        self.error.value = true
+        self.errorMessage = message
+        self.error = true
     }
 
 }

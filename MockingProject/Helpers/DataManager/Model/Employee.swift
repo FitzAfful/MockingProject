@@ -12,7 +12,7 @@ public class Employee: Codable, Equatable {
     var employeeId: String
 	var employeeName: String
 	var employeeSalary: String
-    var profileImage: String
+    var profileImage: String?
 
     enum CodingKeys: String, CodingKey {
         case employeeId = "id"

@@ -9,18 +9,23 @@
 import UIKit
 import ESPullToRefresh
 import Alamofire
-import Resolver
 
-class DIController: UIViewController, Resolving {
+class ServiceLocatorController: UIViewController {
 
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var emptyView: UIView!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-    private var viewModel: HomeViewModel = Resolver.resolve()
+    private var viewModel: HomeViewModel!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+        let serviceLocator = DIServiceLocator.shared
+
+        guard let model: HomeViewModel = serviceLocator.resolve() else { return }
+        self.viewModel = model
+
 		showLoader()
 		setupTableView()
 	}
@@ -84,14 +89,14 @@ class DIController: UIViewController, Resolving {
 
 }
 
-extension DIController: UITableViewDelegate {
+extension ServiceLocatorController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = self.viewModel.employees[indexPath.row]
 		self.moveToDetails(item: item)
 	}
 }
 
-extension DIController: UITableViewDataSource {
+extension ServiceLocatorController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return self.viewModel.employees.count
 	}

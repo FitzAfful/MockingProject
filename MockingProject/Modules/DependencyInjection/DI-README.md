@@ -77,18 +77,23 @@ protocol ServiceLocator {
 }
 
 final class DIServiceLocator: ServiceLocator {
-    private var services: [ObjectIdentifier: Any] = [:]
-    
-    func register<T>(_ service: T) {
-        services[key(for: T.self)] = service
-    }
-    
-    func resolve<T>() -> T? {
-        return services[key(for: T.self)] as? T
+
+    static let shared = DIServiceLocator()
+
+    private lazy var services: Dictionary<String, Any> = [:]
+    private func typeName(some: Any) -> String {
+        return (some is Any.Type) ?
+            "\(some)" : "\(type(of: some))"
     }
 
-    private func key<T>(for type: T.Type) -> ObjectIdentifier {
-        return ObjectIdentifier(T.self)
+    func register<T>(_ service: T) {
+        let key = typeName(some: T.self)
+        services[key] = service
+    }
+
+    func resolve<T>() -> T? {
+        let key = typeName(some: T.self)
+        return services[key] as? T
     }
 }
 ```
@@ -104,7 +109,7 @@ locator.register(dependency)
 To resolve our registered dependency,
 ```
 let locator = DIServiceLocator()
-let dependency: Dependency = locator.resolve()
+guard let dependency: Dependency = locator.resolve() else { return }
 ```
 
 ## Conclusion

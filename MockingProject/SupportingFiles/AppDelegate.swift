@@ -20,6 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           MSCrashes.self
         ])
         _ = SwinjectContainer.sharedContainer
+
+        //ServiceLocator Registrations
+        let serviceLocator = DIServiceLocator.shared
+        serviceLocator.register(APIManager() as APIManager)
+
+        guard let manager: APIManager = serviceLocator.resolve() else { return true }
+        serviceLocator.register(SwinjectViewModel(manager: manager))
+
         return true
     }
 

@@ -107,7 +107,9 @@ let locator = DIServiceLocator()
 let dependency: Dependency = locator.resolve()
 ```
 
+## Conclusion
 There are libraries around like [Resolver](https://github.com/hmlongco/Resolver), [Swinject](https://github.com/Swinject/Swinject) and [Cleanse](https://github.com/square/Cleanse) which create use cases based on the Service Locator pattern for much more complex situations so you can check them out.
+In the controllers in this module, I use Resolver and Swinject.. each with it's view model and Controller in it's simplest form so its easy to understand.
 
 For extensive reading, check out 
 

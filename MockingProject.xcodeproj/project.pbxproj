@@ -29,6 +29,7 @@
 		846991562475E4BA0043D045 /* DIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846991552475E4BA0043D045 /* DIViewModel.swift */; };
 		8469915A2475E7420043D045 /* DI-README.md in Resources */ = {isa = PBXBuildFile; fileRef = 846991592475E7420043D045 /* DI-README.md */; };
 		8469915E24760D940043D045 /* DIServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469915D24760D940043D045 /* DIServiceLocator.swift */; };
+		84699161247611FE0043D045 /* SwinjectContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84699160247611FE0043D045 /* SwinjectContainer.swift */; };
 		8491EB4B246A5EE20024005F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8491EB4A246A5EE20024005F /* README.md */; };
 		8491EB4D246A65890024005F /* AppDelegate+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491EB4C246A65890024005F /* AppDelegate+Injection.swift */; };
 		8491EB4F246A660F0024005F /* APIManager+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491EB4E246A660F0024005F /* APIManager+Injection.swift */; };
@@ -136,6 +137,7 @@
 		846991552475E4BA0043D045 /* DIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIViewModel.swift; sourceTree = "<group>"; };
 		846991592475E7420043D045 /* DI-README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "DI-README.md"; sourceTree = "<group>"; };
 		8469915D24760D940043D045 /* DIServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIServiceLocator.swift; sourceTree = "<group>"; };
+		84699160247611FE0043D045 /* SwinjectContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectContainer.swift; sourceTree = "<group>"; };
 		8491EB4A246A5EE20024005F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8491EB4C246A65890024005F /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
 		8491EB4E246A660F0024005F /* APIManager+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+Injection.swift"; sourceTree = "<group>"; };
@@ -318,6 +320,15 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		8469915F247611EB0043D045 /* DIHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				8469915D24760D940043D045 /* DIServiceLocator.swift */,
+				84699160247611FE0043D045 /* SwinjectContainer.swift */,
+			);
+			path = DIHelpers;
+			sourceTree = "<group>";
+		};
 		84A45803246B7FD800A01CA0 /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,11 +439,11 @@
 		84D855DF243EC4760013E2A8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8469915F247611EB0043D045 /* DIHelpers */,
 				84D22D362435F2BB00358B5F /* DataManager */,
 				84D855E0243EC4850013E2A8 /* EnvironmentHelper.swift */,
 				845F7878244A65E500080A88 /* Observable.swift */,
 				845F787A244A7A9D00080A88 /* EventBus.swift */,
-				8469915D24760D940043D045 /* DIServiceLocator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -844,6 +855,7 @@
 				845F787F244A7B8200080A88 /* EventBusViewModel.swift in Sources */,
 				84457C2B243893D40071AD9B /* HomeViewModel.swift in Sources */,
 				84D22D622435F2BB00358B5F /* DataBindingController.swift in Sources */,
+				84699161247611FE0043D045 /* SwinjectContainer.swift in Sources */,
 				84D22D152435EE3000358B5F /* AppDelegate.swift in Sources */,
 				84D22D172435EE3000358B5F /* SceneDelegate.swift in Sources */,
 				846991562475E4BA0043D045 /* DIViewModel.swift in Sources */,

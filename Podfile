@@ -5,18 +5,36 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'Development' do
+
+    #UI Dev
     pod 'Nuke'
     pod 'IQKeyboardManagerSwift'
-    pod 'Alamofire'
     pod 'ESPullToRefresh'
     pod 'FTIndicator'
+
+    #Networking
+    pod 'Alamofire'
+
+    #Testing
     pod 'Mocker'
+
+    #Dependency Injection
     pod 'Resolver'
-    pod 'AppCenter'
-    pod 'SwiftLint'
+    pod 'Swinject'
+    pod 'SwinjectAutoregistration'
+    pod 'SwinjectStoryboard'
+
+
+    #Reactive / Functional Programming
     pod 'RxSwift'
     pod 'RxCocoa'
-    pod "Apollo"
+
+    #CI/CD
+    pod 'AppCenter'
+    pod 'SwiftLint'
+
+    #GraphQL
+    pod 'Apollo'
 
     target 'MockingProjectTests' do
         inherit! :search_paths

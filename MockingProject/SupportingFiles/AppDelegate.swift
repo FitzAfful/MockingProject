@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           MSAnalytics.self,
           MSCrashes.self
         ])
+        _ = SwinjectContainer.sharedContainer
         return true
     }
 

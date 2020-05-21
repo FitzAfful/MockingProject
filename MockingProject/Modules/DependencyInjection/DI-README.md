@@ -112,10 +112,79 @@ let locator = DIServiceLocator()
 guard let dependency: Dependency = locator.resolve() else { return }
 ```
 
-## Conclusion
+## Libraries
 There are libraries around like [Resolver](https://github.com/hmlongco/Resolver), [Swinject](https://github.com/Swinject/Swinject) and [Cleanse](https://github.com/square/Cleanse) which create use cases based on the Service Locator pattern for much more complex situations so you can check them out.
 In the controllers in this module, I use Resolver and Swinject.. each with it's view model and Controller in it's simplest form so its easy to understand.
 
+### To use Resolver..
+1. Register services (as shown in MockingProject/Helpers/DIHelpers/AppDelegate+Injection)
+```
+extension Resolver: ResolverRegistering {
+    public static func registerAllServices() {
+        registerAPIManager()
+        registerViewModel()
+    }
+}
+
+extension Resolver {
+    public static func registerAPIManager() {
+        register { APIManager() }
+    }
+
+    public static func registerViewModel() {
+        register { ResolverViewModel(manager: self.resolve()) }
+    }
+}
+```
+
+2. Resolve ViewModel in Controller by...
+```
+class ResolverController: UIViewController, Resolving {
+    private var viewModel: ResolverViewModel = Resolver.resolve()
+}
+```
+
+### To use Swinject..
+1. Create a container which contain all your registrations
+```
+class SwinjectContainer {
+
+    static let sharedContainer = SwinjectContainer()
+    let container = Container()
+
+    private init() {
+        setupDefaultContainers()
+    }
+
+    private func setupDefaultContainers() {
+        container.register(APIManager.self, factory: { _ in APIManager() })
+
+        container.register(HomeViewModelProtocol.self, factory: { resolver in
+            return SwinjectViewModel(manager: resolver.resolve(APIManager.self)!)
+        })
+    }
+}
+
+extension SwinjectStoryboard {
+    @objc class func setup() {
+        let mainContainer = SwinjectContainer.sharedContainer.container
+
+        defaultContainer.storyboardInitCompleted(SwinjectController.self) { _, controller in
+            controller.viewModel = mainContainer.resolve(HomeViewModelProtocol.self)
+        }
+    }
+}
+
+```
+
+2. Call Container init method in AppDelegate's didFinishLaunchingWithOptions method
+```
+_ = SwinjectContainer.sharedContainer
+```
+
+3. Resolving will occur automatically now
+
+## Extras
 For extensive reading, check out 
 
 - [Modern Dependency Injection with Swift](https://medium.com/better-programming/modern-dependency-injection-in-swift-952286b308be)

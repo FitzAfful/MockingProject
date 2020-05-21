@@ -7,6 +7,7 @@ A little project to refresh my memory on old stuff I forgot about and new stuff 
 
 ## Features
 - [Data Binding in MVVM](https://github.com/FitzAfful/MockingProject/blob/master/MockingProject/Modules/DataBinding)
+- [Dependency Injection in Swift](https://github.com/FitzAfful/MockingProject/blob/master/MockingProject/Modules/DependencyInjection)
 - [Helpers for Reusable functions](https://github.com/FitzAfful/MockingProject/blob/master/MockingProject/Helpers/EnvironmentalHelpers.swift)
 - [Mocking Network Calls](https://github.com/FitzAfful/MockingProject/blob/master/MockingProjectTests/APIManagerTests.swift)
 - [Multiple Environments Support - Development/Test/Production](https://github.com/FitzAfful/MockingProject/blob/master/MockingProject/Helpers/EnvironmentalHelpers.swift)
@@ -16,6 +17,7 @@ A little project to refresh my memory on old stuff I forgot about and new stuff 
 <b>Built with</b>
 - [Mocker for Mocking Calls/Objects](https://github.com/WeTransfer/Mocker)
 - [Resolver for Dependency Injection](https://github.com/hmlongco/Resolver)
+- [Swinject for Dependency Injection](https://github.com/Swinject/Swinject)
 - [Alamofire for Network Calls](https://github.com/Alamofire/Alamofire)
 - [Swiftlint for Code Analysis](https://github.com/realm/SwiftLint)
 - [Microsoft App Center](https://appcenter.ms)

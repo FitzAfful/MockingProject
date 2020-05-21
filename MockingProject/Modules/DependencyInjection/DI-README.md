@@ -4,7 +4,6 @@
 
 Dependency injection is a technique whereby one object (or static method) supplies the dependencies of another object. A dependency is an object that can be used (a service). By [Bhavya Karia](https://www.freecodecamp.org/news/a-quick-intro-to-dependency-injection-what-it-is-and-when-to-use-it-7578c84fa88f/). There are generally 4 patterns of Dependency Injection. Its also an attempt at implementing the D in SOLID principles which says: High level modules should not depend on low level modules. Both should depend on abstractions. B, Abstractions should not depend upon details. Details should depend on abstractions. 
 
-
 ## Technique 1: Initializer/Constructor DI
 A lot of people use this method without even acknowledging it as Dependency Injection. Here, the dependency is passed in the class' initializer. Below, we pass our Dependency object (dependency) to our class Initializer class through it's init. Then we can use it in other places in the class InitializerClass. This technique becomes complicated when our InitializerClass has a lot of dependencies. Our init method will grow so big. 
 
@@ -22,7 +21,6 @@ class InitializerClass {
     }
 }
 ```
-
 
 ## Technique 2: Property DI
 
@@ -65,7 +63,6 @@ let factory = BaseDIFactory()
 let controller = factory.generateInitializerController()
 // Our controller already comes with it's dependency 
 ```
-
 
 ## Technique 4: Service Locator DI
 The Service Locator serves as a registry of dependencies for a given dependencies and it consists of 2 basic parts. The Registry and the Locator/Resolver. The registry registers our dependencies, then the locator / resolver helps us find our dependencies. Optionally, you can include a Container (A container keep your registrations at one particular place so your code isnt all over the place).  The simplest form of the Service Locator pattern is below
@@ -117,7 +114,7 @@ There are libraries around like [Resolver](https://github.com/hmlongco/Resolver)
 In the controllers in this module, I use Resolver and Swinject.. each with it's view model and Controller in it's simplest form so its easy to understand.
 
 ### To use Resolver..
-1. Register services (as shown in MockingProject/Helpers/DIHelpers/AppDelegate+Injection)
+  1. Register services (as shown in MockingProject/Helpers/DIHelpers/AppDelegate+Injection)
 ```
 extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
@@ -137,15 +134,15 @@ extension Resolver {
 }
 ```
 
-2. Resolve ViewModel in Controller by...
+ 2. Resolve ViewModel in Controller by...
 ```
 class ResolverController: UIViewController, Resolving {
     private var viewModel: ResolverViewModel = Resolver.resolve()
 }
 ```
 
-### To use Swinject..
-1. Create a container which contain all your registrations
+### To use Swinject.
+ 1. Create a container which contain all your registrations
 ```
 class SwinjectContainer {
 
@@ -177,12 +174,12 @@ extension SwinjectStoryboard {
 
 ```
 
-2. Call Container init method in AppDelegate's didFinishLaunchingWithOptions method
+ 2. Call Container init method in AppDelegate's didFinishLaunchingWithOptions method
 ```
 _ = SwinjectContainer.sharedContainer
 ```
 
-3. Resolving will occur automatically now
+ 3. Resolving will occur automatically now
 
 ## Extras
 For extensive reading, check out 

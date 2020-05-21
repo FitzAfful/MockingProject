@@ -6,8 +6,6 @@ Below, I explain 4 techniques you can use to implement Data Binding in your MVVM
 
 Data Binding is simply the process that establishes a connection between the app UI (View Controller) and the data (Not Model, But View Model) it displays. There are different ways of data binding so we’ll look at a couple. Please note, that Data Binding does not apply only to MVVM but to other patterns too.
 
-
-
 ## Technique 1: Observables
 This appears to be the easiest and most commonly used. Libraries like [Bond](https://github.com/DeclarativeHub/Bond) allow you to bind easily but we’re going to create our own Helper class called Observable. It’s initialized with the value we want to observe (or pass around), and we have a function bind that does the binding and gets us our value. listener is our closure called when the value is set.
 
@@ -94,14 +92,11 @@ class ObservableViewModel: ObservableViewModelProtocol {
 
 Tadaa. Anytime employees are added or set, self.showTableView will get called in our Controller.
 
-
-
-
 ## Technique 2: Event Bus / Notification Center
 
 EventBuses are more popular on Android. On iOS, they are well-structured wrappers for the NotificationCenter. You can go for César Ferreira’s [SwiftEventBus](https://github.com/cesarferreira/SwiftEventBus) or [this refactored version](https://gist.github.com/FitzAfful/2af698e9f4ce4f2b2a5fac5d69688080) (which I use).
 
-1. Create an Event that will be pushed by the EventBus to all subscribers. It usually contains the stuff we want to pass around. So EmployeesEvent contains our employees, error Boolean and errorMessage String.
+  1. Create an Event that will be pushed by the EventBus to all subscribers. It usually contains the stuff we want to pass around. So EmployeesEvent contains our employees, error Boolean and errorMessage String.
 
 ```
 class EmployeesEvent: NSObject {
@@ -117,7 +112,7 @@ class EmployeesEvent: NSObject {
 }
 ```
 
-2. Publish (Or Post) the Event from the ViewModel using the EventBus.
+  2. Publish (Or Post) the Event from the ViewModel using the EventBus.
 
 ```
 func callEvent() {
@@ -127,7 +122,7 @@ func callEvent() {
 
 ```
 
-3. Subscribe to Event from View Controller. So setupEventBusSubscriber is called from our viewDidLoad.
+  3. Subscribe to Event from View Controller. So setupEventBusSubscriber is called from our viewDidLoad.
 
 ```
 func setupEventBusSubscriber() {
@@ -143,9 +138,6 @@ func setupEventBusSubscriber() {
 }
 ```
 Contents of our EventBus’ onMainThread implementation run every time callEvent is called in our ViewModel.
-
-
-
 
 ## Technique 3: FRP Technique (ReactiveCocoa / RxSwift):
 The Functional / Reactive Programming approach. You can either go with [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa) or [RxSwift](https://github.com/ReactiveX/RxSwift). RayWenderlich does a good analysis of both [here](https://www.raywenderlich.com/126522/reactivecocoa-vs-rxswift), you might want to check out. But for the sake of this project, I’ll use RxSwift.
@@ -345,6 +337,5 @@ class CombineController: UIViewController {
 ```
 
 And We store the subscriber in an instance property so that it is retained (and so that it will be released automatically at the latest when the surrounding instance goes out of existence) or canceled by ourselves.
-
 
 - [Full Post on Medium](https://medium.com/flawless-app-stories/data-binding-in-mvvm-on-ios-714eb15e3913)

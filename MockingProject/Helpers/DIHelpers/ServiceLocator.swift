@@ -16,7 +16,7 @@ final class DIServiceLocator: ServiceLocator {
 
     static let shared = DIServiceLocator()
 
-    private lazy var services: Dictionary<String, Any> = [:]
+    private lazy var services: [String: Any] = [:]
     private func typeName(some: Any) -> String {
         return (some is Any.Type) ?
             "\(some)" : "\(type(of: some))"

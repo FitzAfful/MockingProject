@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         serviceLocator.register(APIManager() as APIManager)
 
         guard let manager: APIManager = serviceLocator.resolve() else { return true }
-        serviceLocator.register(SwinjectViewModel(manager: manager))
+        serviceLocator.register(HomeViewModel(manager: manager))
 
         return true
     }

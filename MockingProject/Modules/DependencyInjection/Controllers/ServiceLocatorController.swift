@@ -23,7 +23,10 @@ class ServiceLocatorController: UIViewController {
 
         let serviceLocator = DIServiceLocator.shared
 
-        guard let model: HomeViewModel = serviceLocator.resolve() else { return }
+        guard let model: HomeViewModel = serviceLocator.resolve() else {
+            print("Couldnt resolve model")
+            
+            return }
         self.viewModel = model
 
 		showLoader()

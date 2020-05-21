@@ -20,7 +20,6 @@ class SwinjectViewModel: HomeViewModelProtocol {
 
     func fetchEmployees(completion: @escaping ([Employee]?, String?) -> Void) {
         self.apiManager!.getEmployees { (result: DataResponse<EmployeesResponse, AFError>) in
-            print(result)
             switch result.result {
             case .success(let response):
                 if response.status == "success" {

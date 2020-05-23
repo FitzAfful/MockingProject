@@ -10,11 +10,11 @@ import Foundation
 import Resolver
 
 extension Resolver {
-    public static func registerAPIManager() {
-        register { APIManager() }
+    public static func registerEmployeeRepository() {
+        register { APIEmployeeRepository() }
     }
 
     public static func registerViewModel() {
-        register { ResolverViewModel(manager: self.resolve()) }
+        register { ResolverViewModel(repository: self.resolve()) }
     }
 }

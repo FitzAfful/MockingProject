@@ -11,15 +11,15 @@ import Alamofire
 
 class ResolverViewModel: HomeViewModelProtocol {
 
-    var apiManager: APIManager!
+    var employeeRepository: EmployeeRepository?
     var employees: [Employee] = []
 
-    init(manager: APIManager) {
-        self.apiManager = manager
+    init(repository: EmployeeRepository = APIEmployeeRepository()) {
+        self.employeeRepository = repository
     }
 
     func fetchEmployees(completion: @escaping ([Employee]?, String?) -> Void) {
-        apiManager!.getEmployees { (result: DataResponse<EmployeesResponse, AFError>) in
+        employeeRepository!.getEmployees { (result: DataResponse<EmployeesResponse, AFError>) in
             switch result.result {
             case .success(let response):
                 if response.status == "success" {

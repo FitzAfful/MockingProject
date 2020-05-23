@@ -33,18 +33,18 @@ class RxSwiftViewModel {
        return _employees.value.count
     }
 
-    var apiManager: APIManager?
+    var employeeRepository: EmployeeRepository?
 
-    init(manager: APIManager = APIManager()) {
-        self.apiManager = manager
+    init(repository: EmployeeRepository = APIEmployeeRepository()) {
+        self.employeeRepository = repository
     }
 
-    func setAPIManager(manager: APIManager) {
-        self.apiManager = manager
+    func setEmployeeRepository(repository: EmployeeRepository) {
+        self.employeeRepository = repository
     }
 
     func fetchEmployees() {
-        self.apiManager!.getEmployees { (result: DataResponse<EmployeesResponse, AFError>) in
+        self.employeeRepository!.getEmployees { (result: DataResponse<EmployeesResponse, AFError>) in
             switch result.result {
             case .success(let response):
                 if response.status == "success" {

@@ -16,19 +16,19 @@ protocol HomeViewModelProtocol {
 
 class HomeViewModel: HomeViewModelProtocol {
 
-    var apiManager: APIManager?
+    var employeeRepository: EmployeeRepository?
     var employees: [Employee] = []
 
-    init(manager: APIManager = APIManager()) {
-        self.apiManager = manager
+    init(repository: EmployeeRepository = APIEmployeeRepository()) {
+        self.employeeRepository = repository
     }
 
-    func setAPIManager(manager: APIManager) {
-        self.apiManager = manager
+    func setEmployeeRepository(repository: EmployeeRepository) {
+        self.employeeRepository = repository
     }
 
     func fetchEmployees(completion: @escaping ([Employee]?, String?) -> Void) {
-        self.apiManager!.getEmployees { (result: DataResponse<EmployeesResponse, AFError>) in
+        self.employeeRepository!.getEmployees { (result: DataResponse<EmployeesResponse, AFError>) in
             switch result.result {
             case .success(let response):
                 if response.status == "success" {

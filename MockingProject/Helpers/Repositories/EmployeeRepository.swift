@@ -14,22 +14,22 @@ protocol EmployeeRepository {
     func getSingleEmployee(employeeId: String, completion:@escaping (DataResponse<EmployeeResponse, AFError>) -> Void)
 }
 
-public class APIEmployee {
+public class APIEmployeeRepository: EmployeeRepository {
 
-    private let manager: Session
+    private let session: Session
 
-    init(manager: Session = Session.default) {
-        self.manager = manager
+    init(_ session: Session = Session.default) {
+        self.session = session
     }
 
     func getEmployees(completion:@escaping (DataResponse<EmployeesResponse, AFError>) -> Void) {
-        manager.request(APIRouter.getEmployees).responseDecodable { (response) in
+        session.request(APIRouter.getEmployees).responseDecodable { (response) in
             completion(response)
         }
     }
 
     func getSingleEmployee(employeeId: String, completion:@escaping (DataResponse<EmployeeResponse, AFError>) -> Void) {
-        manager.request(APIRouter.getSingleEmployee(employeeId: employeeId)).responseDecodable { (response) in
+        session.request(APIRouter.getSingleEmployee(employeeId: employeeId)).responseDecodable { (response) in
             completion(response)
         }
     }

@@ -20,19 +20,19 @@ class ObservableViewModel: ObservableViewModelProtocol {
     var errorMessage: Observable<String?> = Observable(nil)
     var error: Observable<Bool> = Observable(false)
 
-    var apiManager: APIManager?
+    var employeeRepository: EmployeeRepository?
     var employees: Observable<[Employee]> = Observable([]) //2
 
-    init(manager: APIManager = APIManager()) {
-        self.apiManager = manager
+    init(repository: EmployeeRepository = APIEmployeeRepository()) {
+        self.employeeRepository = repository
     }
 
-    func setAPIManager(manager: APIManager) {
-        self.apiManager = manager
+    func setEmployeeRepository(repository: EmployeeRepository) {
+        self.employeeRepository = repository
     }
 
     func fetchEmployees() {
-        self.apiManager!.getEmployees { (result: DataResponse<EmployeesResponse, AFError>) in
+        self.employeeRepository!.getEmployees { (result: DataResponse<EmployeesResponse, AFError>) in
             switch result.result {
             case .success(let response):
                 if response.status == "success" {

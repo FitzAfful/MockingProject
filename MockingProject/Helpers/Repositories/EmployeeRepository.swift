@@ -9,7 +9,12 @@
 import Foundation
 import Alamofire
 
-public class APIManager {
+protocol EmployeeRepository {
+    func getEmployees(completion:@escaping (DataResponse<EmployeesResponse, AFError>) -> Void)
+    func getSingleEmployee(employeeId: String, completion:@escaping (DataResponse<EmployeeResponse, AFError>) -> Void)
+}
+
+public class APIEmployee {
 
     private let manager: Session
 

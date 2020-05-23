@@ -380,6 +380,7 @@
 			children = (
 				84D22D3A2435F2BB00358B5F /* Model */,
 				84D855DF243EC4760013E2A8 /* Helpers */,
+				84D22D362435F2BB00358B5F /* Repositories */,
 				8407D100244E5E5100E427A1 /* Modules */,
 				84D22D4F2435F2BB00358B5F /* Extensions */,
 				8469915C2475EA3C0043D045 /* SupportingFiles */,
@@ -454,7 +455,6 @@
 			isa = PBXGroup;
 			children = (
 				8469915F247611EB0043D045 /* DIHelpers */,
-				84D22D362435F2BB00358B5F /* Repositories */,
 				84D855E0243EC4850013E2A8 /* EnvironmentHelper.swift */,
 				845F7878244A65E500080A88 /* Observable.swift */,
 				845F787A244A7A9D00080A88 /* EventBus.swift */,

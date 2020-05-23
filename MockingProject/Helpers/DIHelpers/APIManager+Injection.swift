@@ -11,7 +11,7 @@ import Resolver
 
 extension Resolver {
     public static func registerEmployeeRepository() {
-        register { APIEmployeeRepository() }
+        register { APIEmployeeRepository() as EmployeeRepository }
     }
 
     public static func registerViewModel() {

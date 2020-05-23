@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let serviceLocator = DIServiceLocator.shared
         serviceLocator.register(APIEmployeeRepository() as EmployeeRepository)
 
-        guard let repository: APIEmployeeRepository = serviceLocator.resolve() else { return true }
+        guard let repository: EmployeeRepository = serviceLocator.resolve() else { return true }
         serviceLocator.register(HomeViewModel(repository: repository))
 
         return true

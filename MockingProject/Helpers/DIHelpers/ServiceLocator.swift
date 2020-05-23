@@ -24,11 +24,14 @@ final class DIServiceLocator: ServiceLocator {
 
     func register<T>(_ service: T) {
         let key = typeName(some: T.self)
+        print("Registering \(key)")
         services[key] = service
+        print(services)
     }
 
     func resolve<T>() -> T? {
         let key = typeName(some: T.self)
+        print("Resolving \(key)")
         return services[key] as? T
     }
 }

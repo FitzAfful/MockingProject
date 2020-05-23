@@ -11,7 +11,7 @@ import Resolver
 
 extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
-        registerAPIManager()
+        registerEmployeeRepository()
         registerViewModel()
     }
 }

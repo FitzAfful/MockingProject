@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Employee: Codable, Equatable {
+public class EmployeeDTO: Codable, Equatable {
     var employeeId: String
 	var employeeName: String
 	var employeeSalary: String
@@ -21,7 +21,13 @@ public class Employee: Codable, Equatable {
         case profileImage = "profile_image"
     }
 
-    public static func == (lhs: Employee, rhs: Employee) -> Bool {
+    public static func == (lhs: EmployeeDTO, rhs: EmployeeDTO) -> Bool {
         return (lhs.employeeId == rhs.employeeId)
+    }
+}
+
+public extension EmployeeDTO {
+    func map() -> Employee {
+      return Employee(employeeId: self.employeeId, employeeName: self.employeeName, employeeSalary: self.employeeSalary, profileImage: self.profileImage)
     }
 }

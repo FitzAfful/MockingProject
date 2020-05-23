@@ -19,10 +19,10 @@ class SwinjectContainer {
     }
 
     private func setupDefaultContainers() {
-        container.register(APIManager.self, factory: { _ in APIManager() })
+        container.register(EmployeeRepository.self, factory: { _ in APIEmployeeRepository() })
 
         container.register(HomeViewModelProtocol.self, factory: { resolver in
-            return SwinjectViewModel(manager: resolver.resolve(APIManager.self)!)
+            return SwinjectViewModel(repository: resolver.resolve(EmployeeRepository.self)!)
         })
     }
 }

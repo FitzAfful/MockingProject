@@ -9,12 +9,8 @@
 import Foundation
 import Alamofire
 
-struct EmployeesResponse: Codable, Equatable {
+public struct EmployeeResponse {
 
-    var data: [Employee]
+    var data: Employee
     let status: String
-
-    static func == (lhs: EmployeesResponse, rhs: EmployeesResponse) -> Bool {
-        return (lhs.data == rhs.data)
-    }
 }

@@ -10,8 +10,8 @@ import Foundation
 import Alamofire
 
 protocol EmployeeRepository {
-    func getEmployees(completion:@escaping (DataResponse<EmployeesResponse, AFError>) -> Void)
-    func getSingleEmployee(employeeId: String, completion:@escaping (DataResponse<EmployeeResponse, AFError>) -> Void)
+    func getEmployees(completion:@escaping (DataResponse<EmployeesResponseDTO, AFError>) -> Void)
+    func getSingleEmployee(employeeId: String, completion:@escaping (DataResponse<EmployeeResponseDTO, AFError>) -> Void)
 }
 
 public class APIEmployeeRepository: EmployeeRepository {
@@ -22,13 +22,13 @@ public class APIEmployeeRepository: EmployeeRepository {
         self.session = session
     }
 
-    func getEmployees(completion:@escaping (DataResponse<EmployeesResponse, AFError>) -> Void) {
+    func getEmployees(completion:@escaping (DataResponse<EmployeesResponseDTO, AFError>) -> Void) {
         session.request(APIRouter.getEmployees).responseDecodable { (response) in
             completion(response)
         }
     }
 
-    func getSingleEmployee(employeeId: String, completion:@escaping (DataResponse<EmployeeResponse, AFError>) -> Void) {
+    func getSingleEmployee(employeeId: String, completion:@escaping (DataResponse<EmployeeResponseDTO, AFError>) -> Void) {
         session.request(APIRouter.getSingleEmployee(employeeId: employeeId)).responseDecodable { (response) in
             completion(response)
         }

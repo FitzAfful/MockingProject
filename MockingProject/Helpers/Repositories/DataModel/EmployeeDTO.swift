@@ -26,9 +26,8 @@ public class EmployeeDTO: Codable, Equatable {
     }
 }
 
-
 public extension EmployeeDTO {
-    static func map(_ dto: EmployeeDTO) -> Employee {
-      return Employee(employeeId: dto.employeeId, employeeName: dto.employeeName, employeeSalary: dto.employeeSalary, profileImage: dto.profileImage)
+    func map() -> Employee {
+      return Employee(employeeId: self.employeeId, employeeName: self.employeeName, employeeSalary: self.employeeSalary, profileImage: self.profileImage)
     }
 }

@@ -31,11 +31,11 @@ class EventBusViewModel: EventBusModelProtocol {
     }
 
     func fetchEmployees() {
-        self.employeeRepository!.getEmployees { (result: DataResponse<EmployeesResponse, AFError>) in
+        self.employeeRepository!.getEmployees { (result: DataResponse<EmployeesResponseDTO, AFError>) in
             switch result.result {
             case .success(let response):
                 if response.status == "success" {
-                    self.employees = response.data
+                    self.employees = response.map().data
                 } else {
                     self.setError(BaseNetworkManager().getErrorMessage(response: result))
                 }

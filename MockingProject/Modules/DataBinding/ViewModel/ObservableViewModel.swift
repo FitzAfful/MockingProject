@@ -32,11 +32,11 @@ class ObservableViewModel: ObservableViewModelProtocol {
     }
 
     func fetchEmployees() {
-        self.employeeRepository!.getEmployees { (result: DataResponse<EmployeesResponse, AFError>) in
+        self.employeeRepository!.getEmployees { (result: DataResponse<EmployeesResponseDTO, AFError>) in
             switch result.result {
             case .success(let response):
                 if response.status == "success" {
-                    self.employees.value = response.data //3
+                    self.employees.value = response.map().data //3
                     return
                 }
                 self.setError(BaseNetworkManager().getErrorMessage(response: result))

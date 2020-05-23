@@ -44,13 +44,13 @@ class RxSwiftViewModel {
     }
 
     func fetchEmployees() {
-        self.employeeRepository!.getEmployees { (result: DataResponse<EmployeesResponse, AFError>) in
+        self.employeeRepository!.getEmployees { (result: DataResponse<EmployeesResponseDTO, AFError>) in
             switch result.result {
             case .success(let response):
                 if response.status == "success" {
                     self._error.accept(false)
                     self._errorMessage.accept(nil)
-                    self._employees.accept(response.data)
+                    self._employees.accept(response.map().data)
                     return
                 }
                 self.setError(BaseNetworkManager().getErrorMessage(response: result))
